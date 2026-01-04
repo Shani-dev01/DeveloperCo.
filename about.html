@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us - Developer Co.</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white transition-colors duration-200">
+<header class="sticky top-0 z-50 relative flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f4] dark:border-gray-800 bg-white dark:bg-[#101922] px-6 py-3 lg:px-10">
+<div class="flex items-center gap-4 text-[#111418] dark:text-white">
+<div class="size-8 flex items-center justify-center rounded bg-primary/10 text-primary">
+<span class="material-symbols-outlined">apartment</span>
+</div>
+<h2 class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Developer Co.</h2>
+</div>
+<div class="hidden lg:flex flex-1 justify-end gap-8">
+    <nav class="flex items-center gap-9">
+        <a class="text-[#111418] dark:text-gray-300 hover:text-primary text-sm font-medium leading-normal transition-colors" href="home.html">Home</a>
+        <a class="text-[#111418] dark:text-gray-300 hover:text-primary text-sm font-medium leading-normal transition-colors" href="listing.html">Projects</a>
+        <a class="text-[#111418] dark:text-gray-300 hover:text-primary text-sm font-medium leading-normal transition-colors" href="ongoing-project.html">Ongoing</a>
+        <a class="text-[#111418] dark:text-gray-300 hover:text-primary text-sm font-medium leading-normal transition-colors" href="gallery.html">Gallery</a>
+        <a class="text-[#111418] dark:text-gray-300 hover:text-primary text-sm font-medium leading-normal transition-colors" href="completed.html">Completed</a>
+        <a class="text-primary text-sm font-bold leading-normal" href="about.html">About</a>
+        <a class="text-[#111418] dark:text-gray-300 hover:text-primary text-sm font-medium leading-normal transition-colors" href="contact.html">Contact</a>
+    </nav>
+    <a href="contact.html" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary hover:bg-primary/90 text-white text-sm font-bold leading-normal tracking-[0.015em] transition-colors shadow-sm">
+        <span class="truncate">Inquire Now</span>
+    </a>
+</div>
+<button id="openNav" class="lg:hidden p-2 absolute right-4 top-3 text-gray-600 dark:text-gray-300">
+    <span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<!-- Mobile nav backdrop -->
+<div id="navBackdrop" class="fixed inset-0 z-40 hidden bg-black/40 lg:hidden"></div>
+<!-- Mobile nav drawer -->
+<nav id="navDrawer" class="fixed right-0 top-0 z-50 h-full w-[84%] max-w-sm transform translate-x-full bg-white dark:bg-[#0b1520] p-6 transition-transform lg:hidden">
+    <div class="flex items-center justify-between mb-6">
+        <div class="flex items-center gap-3">
+            <div class="size-8 text-primary">
+                <svg class="w-7 h-7" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path></svg>
+            </div>
+            <h3 class="text-lg font-bold text-[#111418] dark:text-white">Apex Developers</h3>
+        </div>
+        <button id="closeNav" class="p-2 text-gray-600 dark:text-gray-300">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+    </div>
+    <ul class="flex flex-col gap-4 mb-6">
+        <li><a class="text-[#111418] dark:text-gray-200 text-base font-medium hover:text-primary" href="home.html">Home</a></li>
+        <li><a class="text-[#111418] dark:text-gray-200 text-base font-medium hover:text-primary" href="listing.html">Projects</a></li>
+        <li><a class="text-[#111418] dark:text-gray-200 text-base font-medium hover:text-primary" href="ongoing-project.html">Ongoing</a></li>
+        <li><a class="text-[#111418] dark:text-gray-200 text-base font-medium hover:text-primary" href="gallery.html">Gallery</a></li>
+        <li><a class="text-[#111418] dark:text-gray-200 text-base font-medium hover:text-primary" href="completed.html">Completed</a></li>
+        <li><a class="text-[#111418] dark:text-gray-200 text-base font-medium hover:text-primary" href="about.html">About Us</a></li>
+        <li><a class="text-[#111418] dark:text-gray-200 text-base font-medium hover:text-primary" href="contact.html">Contact</a></li>
+    </ul>
+    <!-- Mobile enquiry removed to avoid duplicate CTA in mobile header -->
+</nav>
+<main class="relative flex flex-col w-full min-h-screen">
+<section class="relative h-[300px] md:h-[450px] flex items-center justify-center bg-cover bg-center" data-alt="Modern high-rise building glass facade reflecting blue sky" style='background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBpR4qOupoDilO_TGeAdkk-vCGurzXfB-8MlnWV8JACH3izDCwN8MGNnv1Q41P9NwUNcaBzSSncSGBtfErKv8wQpbVqC6ItUIMx0lKKPZKr6XTJGhgUPrvEZS8w28EcR_THzl1_QUa4EgGaObqdIgWmifJY42SfP-5lbMCU-aY9mgwNGgFnjH8UE4bPbnoARgFx3OTb_W5Wf3vhLhLTnIVVyQ8rH2ho6F8PnXljfsAWvBa1VESiBzIPh1kujr5Bmc4ByEMxUqwT6yI");'>
+<div class="container mx-auto px-4 text-center z-10">
+<h1 class="text-white text-4xl md:text-6xl font-black leading-tight tracking-tight mb-6 drop-shadow-sm">
+                    Building Legacies, Creating Communities
+                </h1>
+<p class="text-gray-200 text-lg md:text-xl max-w-3xl mx-auto font-light leading-relaxed">
+                    Over 20 years of excellence in developing premium residential and commercial properties that stand the test of time and elevate the way you live.
+                </p>
+</div>
+</section>
+<section class="container mx-auto px-4 py-16 lg:px-10 lg:py-20 flex flex-col gap-20">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+<div class="flex flex-col gap-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary w-fit text-sm font-bold uppercase tracking-wider">Our Story</div>
+<h2 class="text-3xl md:text-4xl font-bold text-[#111418] dark:text-white leading-tight">Crafting Spaces for Over Two Decades</h2>
+<div class="space-y-4 text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
+<p>
+                            Founded in 2004, Developer Co. has established itself as a premier real estate developer dedicated to transforming cityscapes and lifestyles. We believe that a home is more than just bricks and mortar; it's a sanctuary where memories are made.
+                        </p>
+<p>
+                            Our journey began with a single residential tower and has grown into a diverse portfolio of luxury condominiums, sustainable townships, and innovative commercial hubs.
+                        </p>
+</div>
+<div class="flex flex-wrap gap-8 mt-4 pt-8 border-t border-gray-200 dark:border-gray-800">
+<div class="flex flex-col">
+<span class="text-4xl font-black text-primary">20+</span>
+<span class="text-sm text-gray-500 font-medium mt-1">Years Experience</span>
+</div>
+<div class="w-px bg-gray-200 dark:bg-gray-700 h-12 hidden sm:block"></div>
+<div class="flex flex-col">
+<span class="text-4xl font-black text-primary">50+</span>
+<span class="text-sm text-gray-500 font-medium mt-1">Projects Delivered</span>
+</div>
+<div class="w-px bg-gray-200 dark:bg-gray-700 h-12 hidden sm:block"></div>
+<div class="flex flex-col">
+<span class="text-4xl font-black text-primary">10k+</span>
+<span class="text-sm text-gray-500 font-medium mt-1">Happy Families</span>
+</div>
+</div>
+</div>
+<div class="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl group">
+<img alt="Corporate Headquarters" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH6bflZaF5AJ7DIiBaHBiGfGtBYZT-DRGkLCNcUfThshcCjvO2UoBgSsRxrF_u9DoYkzjUM95MvRtRn8hPIecK1MzDlUF4BZm01xvIHNeei6vFlmSl3DnzoRmRPm9mGLlexkl161BT3uX_DEjdl2Na4H-W81eoSDcmOaAp0-VESfAnF572oo-lwvwU2wctiVgb30Z8JCVVh2N6AIpMgd1PHthU8QRLzWNdgHdVCLJYPUGr4-qIOBk2Xv-ox4cmz7y1D9tBSYTXbgQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-8 left-8 text-white">
+<p class="font-bold text-xl">Headquarters</p>
+<p class="opacity-90">Metro City, USA</p>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-[#1a2634] p-8 md:p-12 rounded-3xl border border-gray-100 dark:border-gray-700 shadow-sm relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+<div class="text-center max-w-3xl mx-auto mb-16 relative z-10">
+<h2 class="text-3xl font-bold text-[#111418] dark:text-white mb-4">Our Core Values</h2>
+<p class="text-gray-500 dark:text-gray-400 text-lg">Guided by principles that ensure excellence, trust, and sustainability in every square foot we build.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+<div class="flex flex-col items-center text-center p-6 rounded-xl hover:bg-gray-50 dark:hover:bg-[#15202b] transition-colors group">
+<div class="w-16 h-16 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">verified</span>
+</div>
+<h3 class="text-xl font-bold text-[#111418] dark:text-white mb-3">Quality Assurance</h3>
+<p class="text-gray-500 dark:text-gray-400 leading-relaxed">We adhere to the highest global standards of construction and design, ensuring durability and luxury in every detail.</p>
+</div>
+<div class="flex flex-col items-center text-center p-6 rounded-xl hover:bg-gray-50 dark:hover:bg-[#15202b] transition-colors group">
+<div class="w-16 h-16 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">eco</span>
+</div>
+<h3 class="text-xl font-bold text-[#111418] dark:text-white mb-3">Sustainability</h3>
+<p class="text-gray-500 dark:text-gray-400 leading-relaxed">Commitment to eco-friendly practices, energy efficiency, and green building certifications for a better tomorrow.</p>
+</div>
+<div class="flex flex-col items-center text-center p-6 rounded-xl hover:bg-gray-50 dark:hover:bg-[#15202b] transition-colors group">
+<div class="w-16 h-16 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">handshake</span>
+</div>
+<h3 class="text-xl font-bold text-[#111418] dark:text-white mb-3">Integrity</h3>
+<p class="text-gray-500 dark:text-gray-400 leading-relaxed">Transparency in all our dealings is our hallmark, building lasting trust with our customers and partners.</p>
+</div>
+</div>
+</div>
+<div>
+<div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
+<div>
+<h2 class="text-3xl font-bold text-[#111418] dark:text-white mb-3">Meet Our Leadership</h2>
+<p class="text-gray-500 dark:text-gray-400 text-lg">The visionaries steering Developer Co. towards new heights.</p>
+</div>
+<a class="hidden md:flex items-center gap-1 text-primary font-bold hover:gap-2 transition-all" href="#">
+                        View Full Team <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="group relative overflow-hidden rounded-xl">
+<div class="aspect-[3/4] overflow-hidden bg-gray-200">
+<img alt="CEO" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPkiOuATROX257ROBrE8Gze-QfzfySn1mB8KEPKCcyLaIx_md_zeSJaTFP6QQKtyDREYGyHPUNo-eAUKtB4KoMOWoQshVrO_fG3eMrJEoG2eb9qPi3KWQoviHVyyI5mLcaGIE4fslS3G9w1qQoddyuwxBtHLtLc_OWL6yLbdybU6_2Yy0JGvkfLtR5ZTgLpATTtg0czLPxDcisQP15gzTdGkX3U3Jik9AAyjI9Hvu_-znRnF1qsS32ZuJ2s4ckKaLBXdmFz_hHTw4"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<h3 class="text-white text-lg font-bold">James Anderson</h3>
+<p class="text-primary font-medium text-sm">Founder &amp; CEO</p>
+<p class="text-gray-300 text-xs mt-2 line-clamp-3">With 25 years in real estate, James leads the strategic vision of the company.</p>
+</div>
+<div class="p-4 bg-white dark:bg-[#1a2634] md:hidden">
+<h3 class="text-[#111418] dark:text-white font-bold">James Anderson</h3>
+<p class="text-primary text-sm">Founder &amp; CEO</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl">
+<div class="aspect-[3/4] overflow-hidden bg-gray-200">
+<img alt="COO" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUJF7wM3JtxpFHiy4WaC6s4cujuJTRgppCMkZMfiqgIluX02J1u_SJcLBMuY4rmiOX_RKCMvuG9mjphoNuWlkX1skvVPv6xmtePLjxMrj6vXv5AHGwQZHTj1KA680S9UMjBwWmG_Kv9cvjUVXci4DyQ5Kxk1fkazvMc3hOkwQC8encUVUGOmxfZAdm9KtyypZAT9x8NxpabtbwHemLnJGp_-8m4yZ1SGB3RSQmb3d8zYIZ2oe87KxRZk2CqkQuldYruIdBCDXAsAk"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<h3 class="text-white text-lg font-bold">Sarah Jenkins</h3>
+<p class="text-primary font-medium text-sm">Chief Operating Officer</p>
+<p class="text-gray-300 text-xs mt-2 line-clamp-3">Sarah ensures operational excellence across all our project sites.</p>
+</div>
+<div class="p-4 bg-white dark:bg-[#1a2634] md:hidden">
+<h3 class="text-[#111418] dark:text-white font-bold">Sarah Jenkins</h3>
+<p class="text-primary text-sm">Chief Operating Officer</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl">
+<div class="aspect-[3/4] overflow-hidden bg-gray-200">
+<img alt="Head of Design" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2p9AkYu8s8WpiJfWSo2a-xmBGwLC5ZRyNvwC5Jm-nggQ1D3Uap9ZzEGVVSRKAhZvCv0U_SsBdeMxcL_D8kvpeN44xdxj1XYxgU9UR2RW9BVPJiAPw-Ciuuayf9pze2J9eFmz8tgbJsvnHdAnAG66BLISekj20dkTFw2ZYQVWyJcpB1AyzfnQdD5momTAdRWfLu2WXnyUQNpOqDU4npLjg-14yGK3am5mTRlTqAo1hLHrjblHAMfVype87Zxbd-C5UEpKkTCmw3X0"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<h3 class="text-white text-lg font-bold">Michael Chen</h3>
+<p class="text-primary font-medium text-sm">Head of Architecture</p>
+<p class="text-gray-300 text-xs mt-2 line-clamp-3">Michael brings award-winning design philosophy to our skylines.</p>
+</div>
+<div class="p-4 bg-white dark:bg-[#1a2634] md:hidden">
+<h3 class="text-[#111418] dark:text-white font-bold">Michael Chen</h3>
+<p class="text-primary text-sm">Head of Architecture</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl">
+<div class="aspect-[3/4] overflow-hidden bg-gray-200">
+<img alt="Marketing Director" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPT0gqp6ppU_gf1cFmscXuq_ylCprG05qisugMvOiw50NRjTs8gTiLCD0c3gS9ix0zx2GINxLcZjC_R_i8N5_CfuXh3tE1rS4Vg_Qu5lWBIxivfr115B54q_dTX4TRj7WXbVGpLTSEA-V2KMl76EqUc55BvLIK4HcK_zXCW3xERneIMuIcdweG49ajglEMbzsRwqf5nHX4DKbfZcqGkKxB2GGrcY7ngCXag9U2hiQk_nPFopzqn8s_LZNbLzqmhmK4d6goYwUzABE"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<h3 class="text-white text-lg font-bold">Emily Rodriguez</h3>
+<p class="text-primary font-medium text-sm">Marketing Director</p>
+<p class="text-gray-300 text-xs mt-2 line-clamp-3">Emily connects our vision with the people who call our buildings home.</p>
+</div>
+<div class="p-4 bg-white dark:bg-[#1a2634] md:hidden">
+<h3 class="text-[#111418] dark:text-white font-bold">Emily Rodriguez</h3>
+<p class="text-primary text-sm">Marketing Director</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-gray-50 dark:bg-[#15202b] rounded-3xl p-8 lg:p-16">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-[#111418] dark:text-white mb-4">What Our Residents Say</h2>
+<p class="text-gray-500 dark:text-gray-400 text-lg">Trusted by thousands of families across the country.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-white dark:bg-[#1a2634] p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 relative">
+<span class="absolute top-6 right-8 text-6xl text-gray-100 dark:text-gray-700 font-serif leading-none">"</span>
+<div class="flex gap-1 text-yellow-400 mb-6">
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+</div>
+<p class="text-gray-600 dark:text-gray-300 mb-8 italic text-lg leading-relaxed">Buying our first home with Developer Co. was the best decision. The quality of finishing and the amenities provided are truly world-class.</p>
+<div class="flex items-center gap-4 border-t border-gray-100 dark:border-gray-700 pt-6">
+<div class="w-12 h-12 rounded-full bg-gray-300 overflow-hidden">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVyNU-6BSpb0e6SC3VVDSUdANOL_aDkNjmPtiLn4Wd52nNbHe7tRbtFH8ouVRNZcadV81hA7MiG5OnPcV2ZqINqfmpd6qHRPzuOLoQ3CEEUSG8J_ODTfqGrJgq-tTmpmr2kolFDoi_iz4Kseq_AS9Krc-TmQgdJIe13-iV_UeWlwrb1PMmDXUal6rVP3LIhNkEdjyL4_23r6M7BD4fLmGWpFt6aa3Q5sf-We34ewuasS7ZeyzEoalzNbr8XLs9_H77EADAUlp8L6U"/>
+</div>
+<div>
+<p class="text-base font-bold text-[#111418] dark:text-white">David Miller</p>
+<p class="text-xs text-gray-500">Resident, Skyline Residences</p>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-[#1a2634] p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 relative">
+<span class="absolute top-6 right-8 text-6xl text-gray-100 dark:text-gray-700 font-serif leading-none">"</span>
+<div class="flex gap-1 text-yellow-400 mb-6">
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+</div>
+<p class="text-gray-600 dark:text-gray-300 mb-8 italic text-lg leading-relaxed">The transparency throughout the process was refreshing. They delivered exactly what was promised, on time.</p>
+<div class="flex items-center gap-4 border-t border-gray-100 dark:border-gray-700 pt-6">
+<div class="w-12 h-12 rounded-full bg-gray-300 overflow-hidden">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9l7WI2r2e1QmBREefJUBtbpXc8SoczSVJVSFM7Z5MId_Z1uFOPTF1CJP4sh5EWLllQSrlzf33vYvSbV5B_MBXdgBz3scbOhI2nV52xyqosbBDrKnigyBFNiRiODF61RtrnZoKHwp_CDWBDC7qRW-FF3ZwouFOJIHKcSxUTFRMh1aDucsmL869-gJR5lXzK8e_COnRKp2yFTqyo5LAGcY8k102HbBJB5mowovyzVedoWopVGOfBXHXpU8kGTGPPZJP5ugaqDOLwPc"/>
+</div>
+<div>
+<p class="text-base font-bold text-[#111418] dark:text-white">Sarah Connor</p>
+<p class="text-xs text-gray-500">Resident, Harbor View</p>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-[#1a2634] p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 relative">
+<span class="absolute top-6 right-8 text-6xl text-gray-100 dark:text-gray-700 font-serif leading-none">"</span>
+<div class="flex gap-1 text-yellow-400 mb-6">
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+</div>
+<p class="text-gray-600 dark:text-gray-300 mb-8 italic text-lg leading-relaxed">A truly professional team that cares about the community they build. The green spaces in Central Park Towers are amazing.</p>
+<div class="flex items-center gap-4 border-t border-gray-100 dark:border-gray-700 pt-6">
+<div class="w-12 h-12 rounded-full bg-gray-300 overflow-hidden">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8tQUN3W3mVCOVUcbtJT8AN5StcNRJD4wA6vzM2rN4x6MAJ7Mzn-lBQcFLqgv8kFAJEr_zAfmfn5MkzbeGz0FHiSHeaLn6Bg7o1-vURBN39tTW_sZZPLHuK5XF_wDu4axBmVWpcx-eVjpt_NeLHFwdNi-CkaOshXB_vIdhUER6xfH-tGSYUoQy-7eP34Rh3dHpb6NI5y5NWICyfss7_VnBQtI38CdrsPsnhOXsFhsd3Od9k6h0hajMOSQmFLmumSjzO65KuQxvlKA"/>
+</div>
+<div>
+<p class="text-base font-bold text-[#111418] dark:text-white">Mark Wilson</p>
+<p class="text-xs text-gray-500">Investor</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="relative rounded-3xl overflow-hidden py-16 px-8 text-center bg-primary">
+<div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+<div class="relative z-10 max-w-2xl mx-auto">
+<h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Find Your Dream Home?</h2>
+<p class="text-blue-100 text-lg mb-8">Explore our latest projects and see why thousands of families trust Developer Co.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-white text-primary hover:bg-gray-50 font-bold py-3.5 px-8 rounded-lg shadow-lg transition-colors">
+                             View Our Projects
+                         </button>
+<button class="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold py-3.5 px-8 rounded-lg transition-colors">
+                             Contact Us
+                         </button>
+</div>
+</div>
+</div>
+</section>
+<div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+<button class="flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-lg hover:scale-110 transition-transform" title="Chat on WhatsApp">
+<svg class="w-7 h-7 fill-current" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path></svg>
+</button>
+<button class="flex items-center justify-center w-14 h-14 bg-primary text-white rounded-full shadow-lg hover:scale-110 transition-transform" title="Call Us Now">
+<span class="material-symbols-outlined text-3xl">phone_in_talk</span>
+</button>
+</div>
+<footer class="bg-white dark:bg-[#0b1219] border-t border-gray-200 dark:border-gray-800 pt-16 pb-8">
+<div class="container mx-auto px-6 lg:px-10">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3 text-[#111418] dark:text-white">
+<div class="size-8 flex items-center justify-center rounded bg-primary/10 text-primary">
+<span class="material-symbols-outlined">apartment</span>
+</div>
+<h2 class="text-xl font-bold">Developer Co.</h2>
+</div>
+<p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                            Building the future of modern living. We create sustainable and luxurious communities for generations to come.
+                        </p>
+</div>
+<div class="flex flex-col gap-4">
+<h3 class="text-[#111418] dark:text-white font-bold text-lg">Quick Links</h3>
+<nav class="flex flex-col gap-3">
+<a class="text-gray-500 dark:text-gray-400 hover:text-primary transition-colors text-sm" href="#">About Us</a>
+<a class="text-gray-500 dark:text-gray-400 hover:text-primary transition-colors text-sm" href="#">Our Projects</a>
+<a class="text-gray-500 dark:text-gray-400 hover:text-primary transition-colors text-sm" href="#">Latest News</a>
+<a class="text-gray-500 dark:text-gray-400 hover:text-primary transition-colors text-sm" href="#">Careers</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<h3 class="text-[#111418] dark:text-white font-bold text-lg">Featured Projects</h3>
+<nav class="flex flex-col gap-3">
+<a class="text-gray-500 dark:text-gray-400 hover:text-primary transition-colors text-sm" href="#">Skyline Residences</a>
+<a class="text-gray-500 dark:text-gray-400 hover:text-primary transition-colors text-sm" href="#">Harbor View Estates</a>
+<a class="text-gray-500 dark:text-gray-400 hover:text-primary transition-colors text-sm" href="#">Central Park Towers</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<h3 class="text-[#111418] dark:text-white font-bold text-lg">Connect With Us</h3>
+<div class="flex gap-4">
+<a class="size-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-primary hover:text-white transition-all" href="#">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.15 5.96C15.21 5.96 16.12 6.04 16.12 6.04V8.51H15.02C13.78 8.51 13.39 9.28 13.39 10.07V12.06H16.18L15.74 14.96H13.39V21.96C18.16 21.21 21.82 17.06 21.82 12.06C21.82 6.53 17.32 2.04 12 2.04Z"></path></svg>
+</a>
+<a class="size-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-primary hover:text-white transition-all" href="#">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+</a>
+<a class="size-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-primary hover:text-white transition-all" href="#">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-100 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-xs text-gray-500 dark:text-gray-500">
+                        © 2024 Developer Co. All rights reserved.
+                    </p>
+<div class="flex gap-6">
+<a class="text-xs text-gray-500 dark:text-gray-500 hover:text-primary" href="#">Privacy Policy</a>
+<a class="text-xs text-gray-500 dark:text-gray-500 hover:text-primary" href="#">Terms of Service</a>
+<a class="text-xs text-gray-500 dark:text-gray-500 hover:text-primary" href="#">Sitemap</a>
+</div>
+</div>
+</div>
+</footer>
+</main>
+
+<script>
+    (function(){
+        var open = document.getElementById('openNav');
+        var close = document.getElementById('closeNav');
+        var drawer = document.getElementById('navDrawer');
+        var backdrop = document.getElementById('navBackdrop');
+        function show(){ if(drawer) { drawer.classList.remove('translate-x-full'); drawer.classList.add('translate-x-0'); } if(backdrop) backdrop.classList.remove('hidden'); }
+        function hide(){ if(drawer) { drawer.classList.add('translate-x-full'); drawer.classList.remove('translate-x-0'); } if(backdrop) backdrop.classList.add('hidden'); }
+        if(open) open.addEventListener('click', show);
+        if(close) close.addEventListener('click', hide);
+        if(backdrop) backdrop.addEventListener('click', hide);
+        var links = document.querySelectorAll('#navDrawer a');
+        links.forEach(function(a){ a.addEventListener('click', hide); });
+    })();
+</script>
+
+</body></html>

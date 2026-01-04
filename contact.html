@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact Us - Developer Co.</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white transition-colors duration-200">
+<!-- Header: unified Apex Developers header -->
+<header class="relative flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f4] dark:border-b-gray-800 bg-white dark:bg-[#1a222d] px-10 py-3 sticky top-0 z-50">
+    <div class="flex items-center gap-4 text-[#111418] dark:text-white">
+        <button id="openNav" class="p-2 lg:hidden absolute right-4 top-3 text-[#111418] dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+       <div class="size-8 flex items-center justify-center rounded bg-primary/10 text-primary">
+<span class="material-symbols-outlined">apartment</span>
+</div>
+        <h2 class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Developers Co.</h2>
+    </div>
+    <div class="flex flex-1 justify-end gap-8">
+        <div class="hidden lg:flex items-center gap-9">
+            <a class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="home.html">Home</a>
+            <a class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="listing.html">Projects</a>
+            <a class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="ongoing-project.html">Ongoing</a>
+            <a class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="gallery.html">Gallery</a>
+            <a class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="completed.html">Completed</a>
+            <a class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="about.html">About Us</a>
+            <a class="text-primary text-sm font-bold leading-normal" href="contact.html">Contact</a>
+        </div>
+        <a href="contact.html" class="hidden lg:flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary hover:bg-blue-600 transition-colors text-white text-sm font-bold leading-normal tracking-[0.015em]">Enquire Now</a>
+    </div>
+</header>
+<!-- Mobile nav backdrop -->
+<div id="navBackdrop" class="fixed inset-0 z-40 hidden bg-black/40 lg:hidden"></div>
+<!-- Mobile nav drawer -->
+<nav id="navDrawer" class="fixed right-0 top-0 z-50 h-full w-[84%] max-w-sm transform translate-x-full bg-white dark:bg-[#0b1520] p-6 transition-transform lg:hidden">
+    <div class="flex items-center justify-between mb-6">
+        <div class="flex items-center gap-3">
+            <div class="size-8 text-primary">
+                <svg class="w-7 h-7" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path></svg>
+            </div>
+            <h3 class="text-lg font-bold text-[#111418] dark:text-white">Apex Developers</h3>
+        </div>
+        <button id="closeNav" class="p-2 text-gray-600 dark:text-gray-300">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+    </div>
+    <ul class="flex flex-col gap-4 mb-6">
+        <li><a class="text-[#111418] dark:text-gray-200 text-base font-medium hover:text-primary" href="home.html">Home</a></li>
+        <li><a class="text-[#111418] dark:text-gray-200 text-base font-medium hover:text-primary" href="listing.html">Projects</a></li>
+        <li><a class="text-[#111418] dark:text-gray-200 text-base font-medium hover:text-primary" href="ongoing-project.html">Ongoing</a></li>
+        <li><a class="text-[#111418] dark:text-gray-200 text-base font-medium hover:text-primary" href="gallery.html">Gallery</a></li>
+        <li><a class="text-[#111418] dark:text-gray-200 text-base font-medium hover:text-primary" href="completed.html">Completed</a></li>
+        <li><a class="text-[#111418] dark:text-gray-200 text-base font-medium hover:text-primary" href="about.html">About Us</a></li>
+        <li><a class="text-[#111418] dark:text-gray-200 text-base font-medium hover:text-primary" href="contact.html">Contact</a></li>
+    </ul>
+    <!-- Mobile enquiry removed to avoid duplicate CTA in mobile header -->
+</nav>
+
+<main class="relative flex flex-col w-full min-h-screen">
+<!-- Hero Section -->
+<section class="relative h-[300px] md:h-[400px] flex items-center justify-center bg-cover bg-center" data-alt="Modern high-rise building glass facade reflecting blue sky" style='background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBpR4qOupoDilO_TGeAdkk-vCGurzXfB-8MlnWV8JACH3izDCwN8MGNnv1Q41P9NwUNcaBzSSncSGBtfErKv8wQpbVqC6ItUIMx0lKKPZKr6XTJGhgUPrvEZS8w28EcR_THzl1_QUa4EgGaObqdIgWmifJY42SfP-5lbMCU-aY9mgwNGgFnjH8UE4bPbnoARgFx3OTb_W5Wf3vhLhLTnIVVyQ8rH2ho6F8PnXljfsAWvBa1VESiBzIPh1kujr5Bmc4ByEMxUqwT6yI");'>
+<div class="container mx-auto px-4 text-center z-10">
+<h1 class="text-white text-4xl md:text-5xl font-black leading-tight tracking-tight mb-4 drop-shadow-sm">
+                    Let's Find Your Dream Property
+                </h1>
+<p class="text-gray-200 text-lg md:text-xl max-w-2xl mx-auto font-light">
+                    Our team is ready to answer your questions and schedule a viewing for our premium residences.
+                </p>
+</div>
+</section>
+<!-- Main Content Grid -->
+<section class="container mx-auto px-4 py-12 lg:px-10 lg:py-16">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 xl:gap-12">
+<!-- Left Column: Contact Info & Map -->
+<div class="lg:col-span-7 flex flex-col gap-10 order-2 lg:order-1">
+<!-- Intro Text -->
+<div>
+<h2 class="text-2xl font-bold text-[#111418] dark:text-white mb-2">Contact Information</h2>
+<p class="text-gray-600 dark:text-gray-400">Reach out to us directly or visit our sales gallery. We're open daily.</p>
+</div>
+<!-- Contact Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex flex-col gap-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1a2634] p-6 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">location_on</span>
+</div>
+<div>
+<h3 class="text-[#111418] dark:text-white text-lg font-bold">Sales Gallery</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm mt-1">123 Real Estate Blvd, Metro City, 10001</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1a2634] p-6 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">phone_in_talk</span>
+</div>
+<div>
+<h3 class="text-[#111418] dark:text-white text-lg font-bold">Call Us 24/7</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm mt-1">+1 (555) 000-0000</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1a2634] p-6 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">mail</span>
+</div>
+<div>
+<h3 class="text-[#111418] dark:text-white text-lg font-bold">Email Us</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm mt-1">sales@developer.com</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1a2634] p-6 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">schedule</span>
+</div>
+<div>
+<h3 class="text-[#111418] dark:text-white text-lg font-bold">Opening Hours</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm mt-1">Mon-Sun: 9:00 AM - 6:00 PM</p>
+</div>
+</div>
+</div>
+<!-- Map Section -->
+<div class="flex flex-col gap-4">
+<h2 class="text-xl font-bold text-[#111418] dark:text-white">Our Location</h2>
+<div class="w-full h-[320px] rounded-xl overflow-hidden shadow-sm border border-gray-200 dark:border-gray-700 relative">
+<!-- Placeholder Map Image -->
+<div class="absolute inset-0 bg-gray-200 dark:bg-gray-800 flex items-center justify-center bg-cover bg-center" data-alt="Map showing location in downtown city grid" data-location="New York City" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAYWWFOcrqqz2hjrEZGfmDvoihq_HHW2JRD7yeXHeqcK4oSMV3tBBIrklLaz7-SQ_Vrfp3ZAOJ0WTYDmKIrgqxphMfhMRhD47LvWvvGaRC34lzC3ktOY5pmjQ4UJxppCT5gLR2qu8X3d_IIVhw9OJ88bJfxur0hk-dr6MmipGvif9TdLyk9OwOkvjXNjIdNDLTMoou0_HO6J4wuj3SS8yrsyalw-WlFGA2DcLGLwq2U1iEUHnuxs5rba0xH2HUCmo3o5wlTuK4Cal4");'>
+<div class="absolute inset-0 bg-black/10"></div>
+<a class="relative z-10 bg-white dark:bg-[#101922] text-[#111418] dark:text-white px-6 py-3 rounded-lg font-bold shadow-lg hover:scale-105 transition-transform flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-primary">directions</span>
+                                    Get Directions
+                                 </a>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Lead Form -->
+<div class="lg:col-span-5 order-1 lg:order-2">
+<div class="sticky top-24 bg-white dark:bg-[#1a2634] p-6 md:p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700">
+<div class="mb-6">
+<h2 class="text-2xl font-bold text-[#111418] dark:text-white mb-2">Send a Message</h2>
+<p class="text-sm text-gray-500 dark:text-gray-400">Fill out the form below and our team will get back to you within 2 hours.</p>
+</div>
+<form class="flex flex-col gap-5">
+<!-- Name -->
+<label class="flex flex-col gap-1.5">
+<span class="text-sm font-medium text-[#111418] dark:text-gray-200">Full Name</span>
+<input class="w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-[#101922] px-4 py-3 text-base text-[#111418] dark:text-white placeholder-gray-400 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="John Doe" type="text"/>
+</label>
+<!-- Phone -->
+<label class="flex flex-col gap-1.5">
+<span class="text-sm font-medium text-[#111418] dark:text-gray-200">Phone Number</span>
+<input class="w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-[#101922] px-4 py-3 text-base text-[#111418] dark:text-white placeholder-gray-400 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="+1 (555) 000-0000" type="tel"/>
+</label>
+<!-- Email -->
+<label class="flex flex-col gap-1.5">
+<span class="text-sm font-medium text-[#111418] dark:text-gray-200">Email Address</span>
+<input class="w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-[#101922] px-4 py-3 text-base text-[#111418] dark:text-white placeholder-gray-400 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="john@example.com" type="email"/>
+</label>
+<!-- Project Interest -->
+<label class="flex flex-col gap-1.5">
+<span class="text-sm font-medium text-[#111418] dark:text-gray-200">Interested Project</span>
+<div class="relative">
+<select class="w-full appearance-none rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-[#101922] px-4 py-3 pr-10 text-base text-[#111418] dark:text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+<option disabled="" selected="" value="">Select a project</option>
+<option value="skyline">Skyline Residences</option>
+<option value="harbor">Harbor View Estates</option>
+<option value="central">Central Park Towers</option>
+<option value="other">General Inquiry</option>
+</select>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500">
+<span class="material-symbols-outlined">expand_more</span>
+</span>
+</div>
+</label>
+<!-- Message -->
+<label class="flex flex-col gap-1.5">
+<span class="text-sm font-medium text-[#111418] dark:text-gray-200">Message</span>
+<textarea class="w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-[#101922] px-4 py-3 text-base text-[#111418] dark:text-white placeholder-gray-400 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all min-h-[120px] resize-none" placeholder="I'd like to schedule a viewing..."></textarea>
+</label>
+<!-- Preferences -->
+<div class="flex flex-col gap-2">
+<span class="text-sm font-medium text-[#111418] dark:text-gray-200">Preferred Contact Method</span>
+<div class="flex gap-4">
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="w-4 h-4 rounded text-primary border-gray-300 focus:ring-primary" type="checkbox"/>
+<span class="text-sm text-gray-600 dark:text-gray-400">Email</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="w-4 h-4 rounded text-primary border-gray-300 focus:ring-primary" type="checkbox"/>
+<span class="text-sm text-gray-600 dark:text-gray-400">WhatsApp/Phone</span>
+</label>
+</div>
+</div>
+<!-- Submit Button -->
+<button class="mt-2 w-full rounded-lg bg-primary hover:bg-primary/90 py-3.5 text-base font-bold text-white shadow-md transition-all active:scale-[0.98]" type="button">
+                                Send Inquiry
+                            </button>
+<p class="text-xs text-center text-gray-400 mt-2">
+                                By submitting this form, you agree to our <a class="underline hover:text-primary" href="#">Privacy Policy</a>.
+                            </p>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Sticky Floating Action Buttons -->
+<div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+<button class="flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-lg hover:scale-110 transition-transform" title="Chat on WhatsApp">
+<svg class="w-7 h-7 fill-current" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!-- Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path></svg>
+</button>
+<button class="flex items-center justify-center w-14 h-14 bg-primary text-white rounded-full shadow-lg hover:scale-110 transition-transform" title="Call Us Now">
+<span class="material-symbols-outlined text-3xl">phone_in_talk</span>
+</button>
+</div>
+<!-- Footer -->
+<footer class="bg-white dark:bg-[#0b1219] border-t border-gray-200 dark:border-gray-800 pt-16 pb-8">
+<div class="container mx-auto px-6 lg:px-10">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+<!-- Brand -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3 text-[#111418] dark:text-white">
+<div class="size-8 flex items-center justify-center rounded bg-primary/10 text-primary">
+<span class="material-symbols-outlined">apartment</span>
+</div>
+<h2 class="text-xl font-bold">Developer Co.</h2>
+</div>
+<p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                            Building the future of modern living. We create sustainable and luxurious communities for generations to come.
+                        </p>
+</div>
+<!-- Quick Links -->
+<div class="flex flex-col gap-4">
+<h3 class="text-[#111418] dark:text-white font-bold text-lg">Quick Links</h3>
+<nav class="flex flex-col gap-3">
+<a class="text-gray-500 dark:text-gray-400 hover:text-primary transition-colors text-sm" href="#">About Us</a>
+<a class="text-gray-500 dark:text-gray-400 hover:text-primary transition-colors text-sm" href="#">Our Projects</a>
+<a class="text-gray-500 dark:text-gray-400 hover:text-primary transition-colors text-sm" href="#">Latest News</a>
+<a class="text-gray-500 dark:text-gray-400 hover:text-primary transition-colors text-sm" href="#">Careers</a>
+</nav>
+</div>
+<!-- Projects -->
+<div class="flex flex-col gap-4">
+<h3 class="text-[#111418] dark:text-white font-bold text-lg">Featured Projects</h3>
+<nav class="flex flex-col gap-3">
+<a class="text-gray-500 dark:text-gray-400 hover:text-primary transition-colors text-sm" href="#">Skyline Residences</a>
+<a class="text-gray-500 dark:text-gray-400 hover:text-primary transition-colors text-sm" href="#">Harbor View Estates</a>
+<a class="text-gray-500 dark:text-gray-400 hover:text-primary transition-colors text-sm" href="#">Central Park Towers</a>
+</nav>
+</div>
+<!-- Socials -->
+<div class="flex flex-col gap-4">
+<h3 class="text-[#111418] dark:text-white font-bold text-lg">Connect With Us</h3>
+<div class="flex gap-4">
+<a class="size-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-primary hover:text-white transition-all" href="#">
+<!-- Facebook Icon Placeholder -->
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.15 5.96C15.21 5.96 16.12 6.04 16.12 6.04V8.51H15.02C13.78 8.51 13.39 9.28 13.39 10.07V12.06H16.18L15.74 14.96H13.39V21.96C18.16 21.21 21.82 17.06 21.82 12.06C21.82 6.53 17.32 2.04 12 2.04Z"></path></svg>
+</a>
+<a class="size-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-primary hover:text-white transition-all" href="#">
+<!-- Twitter/X Icon Placeholder -->
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+</a>
+<a class="size-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-primary hover:text-white transition-all" href="#">
+<!-- Instagram Icon Placeholder -->
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-100 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-xs text-gray-500 dark:text-gray-500">
+                        © 2024 Developer Co. All rights reserved.
+                    </p>
+<div class="flex gap-6">
+<a class="text-xs text-gray-500 dark:text-gray-500 hover:text-primary" href="#">Privacy Policy</a>
+<a class="text-xs text-gray-500 dark:text-gray-500 hover:text-primary" href="#">Terms of Service</a>
+<a class="text-xs text-gray-500 dark:text-gray-500 hover:text-primary" href="#">Sitemap</a>
+</div>
+</div>
+</div>
+</footer>
+</main>
+
+<script>
+    (function(){
+        var open = document.getElementById('openNav');
+        var close = document.getElementById('closeNav');
+        var drawer = document.getElementById('navDrawer');
+        var backdrop = document.getElementById('navBackdrop');
+        function show(){ if(drawer) { drawer.classList.remove('translate-x-full'); drawer.classList.add('translate-x-0'); } if(backdrop) backdrop.classList.remove('hidden'); }
+        function hide(){ if(drawer) { drawer.classList.add('translate-x-full'); drawer.classList.remove('translate-x-0'); } if(backdrop) backdrop.classList.add('hidden'); }
+        if(open) open.addEventListener('click', show);
+        if(close) close.addEventListener('click', hide);
+        if(backdrop) backdrop.addEventListener('click', hide);
+        var links = document.querySelectorAll('#navDrawer a');
+        links.forEach(function(a){ a.addEventListener('click', hide); });
+    })();
+</script>
+
+</body></html>

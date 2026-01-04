@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Completed Projects - Apex Developers</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white font-display min-h-screen flex flex-col overflow-x-hidden">
+<!-- Sticky Contact Buttons -->
+<div class="fixed bottom-6 right-6 z-50 flex flex-col gap-4">
+<!-- WhatsApp Button -->
+<a aria-label="Chat on WhatsApp" class="flex items-center justify-center size-14 rounded-full bg-[#25D366] text-white shadow-lg hover:scale-110 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined !text-[32px]">chat</span>
+</a>
+<!-- Call Button -->
+<a aria-label="Call Us" class="flex items-center justify-center size-14 rounded-full bg-primary text-white shadow-lg hover:scale-110 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined !text-[32px]">call</span>
+</a>
+</div>
+<!-- Top Navigation -->
+<header class="relative sticky top-0 z-40 w-full bg-white dark:bg-background-dark border-b border-solid border-b-[#f0f2f4] dark:border-gray-800">
+<div class="max-w-[1440px] mx-auto px-4 sm:px-10 py-3">
+<div class="flex items-center justify-between whitespace-nowrap">
+<div class="flex items-center gap-4 text-[#111418] dark:text-white">
+<div class="size-8 flex items-center justify-center rounded bg-primary/10 text-primary">
+<span class="material-symbols-outlined">apartment</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Developers Co.</h2>
+</div>
+<!-- Desktop Menu -->
+<nav class="hidden md:flex flex-1 justify-end gap-8 items-center">
+    <div class="flex items-center gap-6 lg:gap-9">
+    <a class="text-[#111418] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="home.html">Home</a>
+    <a class="text-[#111418] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="listing.html">Projects</a>
+    <a class="text-[#111418] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="ongoing-project.html">Ongoing Projects</a>
+    <a class="text-[#111418] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="gallery.html">Gallery</a>
+    <a class="text-primary text-sm font-bold" href="completed.html">Completed</a>
+    <a class="text-[#111418] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="about.html">About</a>
+    <a class="text-[#111418] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="contact.html">Contact</a>
+</div>
+<a href="contact.html" class="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold hover:bg-blue-600 transition-colors">
+    <span class="truncate">Get a Quote</span>
+</a>
+</nav>
+</header>
+<!-- Mobile nav backdrop -->
+<div id="navBackdrop" class="fixed inset-0 z-40 hidden bg-black/40 lg:hidden"></div>
+<!-- Mobile nav drawer -->
+<nav id="navDrawer" class="fixed right-0 top-0 z-50 h-full w-[84%] max-w-sm transform translate-x-full bg-white dark:bg-[#0b1520] p-6 transition-transform lg:hidden">
+    <div class="flex items-center justify-between mb-6">
+        <div class="flex items-center gap-3">
+            <div class="size-8 text-primary">
+                <svg class="w-7 h-7" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path></svg>
+            </div>
+            <h3 class="text-lg font-bold text-[#111418] dark:text-white">Apex Developers</h3>
+        </div>
+        <button id="closeNav" class="p-2 text-gray-600 dark:text-gray-300">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+    </div>
+    <ul class="flex flex-col gap-4 mb-6">
+        <li><a class="text-[#111418] dark:text-gray-200 text-base font-medium hover:text-primary" href="home.html">Home</a></li>
+        <li><a class="text-[#111418] dark:text-gray-200 text-base font-medium hover:text-primary" href="listing.html">Projects</a></li>
+        <li><a class="text-[#111418] dark:text-gray-200 text-base font-medium hover:text-primary" href="ongoing-project.html">Ongoing</a></li>
+        <li><a class="text-[#111418] dark:text-gray-200 text-base font-medium hover:text-primary" href="gallery.html">Gallery</a></li>
+        <li><a class="text-[#111418] dark:text-gray-200 text-base font-medium hover:text-primary" href="completed.html">Completed</a></li>
+        <li><a class="text-[#111418] dark:text-gray-200 text-base font-medium hover:text-primary" href="about.html">About Us</a></li>
+        <li><a class="text-[#111418] dark:text-gray-200 text-base font-medium hover:text-primary" href="contact.html">Contact</a></li>
+    </ul>
+    <!-- Mobile enquiry removed to avoid duplicate CTA in mobile header -->
+</nav>
+<!-- Mobile Menu Icon -->
+<div class="md:hidden">
+    <button id="openNav" class="p-2 lg:hidden absolute right-4 top-3 text-[#111418] dark:text-white"><span class="material-symbols-outlined">menu</span></button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="w-full bg-white dark:bg-background-dark">
+<div class="max-w-[1440px] mx-auto px-4 sm:px-10 py-5">
+<div class="max-w-[960px] mx-auto">
+<div class="@container">
+<div class="@[480px]:p-4">
+<div class="flex min-h-[400px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-8 relative overflow-hidden group" data-alt="Modern glass skyscraper reflecting sunset clouds" style='background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDxnp9XGC-V5h6qdMGz1a7WSZL4-U2139eMFf1dbygGdt-57XPzMyvkkGCzEQmHD8n3j0or2UPkXojtFIEOJBwzu-JaJfVMStExvnfGWXdcdGV01J8yz7qKDsxtLoMPdxpMqG4Yg5ddke2nf-lf0i85Hw6dhx-ANMyaVuQbdBFfnrr_OgTeEfaKz9lTVHIGpSnrLh7rXIQK4TOIKJQfBSG9TqMZaG81d4AJXDuK41JDTx6Yg8wIUO4bo-tmVC5q_1D9_31ikO4aBaE");'>
+<div class="flex flex-col gap-2 text-center relative z-10 max-w-2xl">
+<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl drop-shadow-lg">
+                                        Our Legacy of Excellence
+                                    </h1>
+<h2 class="text-gray-100 text-base font-normal leading-relaxed @[480px]:text-lg drop-shadow-md mt-2">
+                                        Browse our portfolio of successfully completed developments. Each project represents our commitment to quality, sustainability, and architectural innovation.
+                                    </h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Filter Chips -->
+<section class="w-full bg-background-light dark:bg-background-dark">
+<div class="max-w-[1440px] mx-auto px-4 sm:px-10 py-2">
+<div class="max-w-[960px] mx-auto">
+<div class="flex gap-3 p-3 flex-wrap justify-center sm:justify-start">
+<!-- Active Chip -->
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary pl-6 pr-6 shadow-sm hover:shadow-md transition-all">
+<p class="text-white text-sm font-medium leading-normal">All Projects</p>
+</button>
+<!-- Inactive Chips -->
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-gray-800 border border-[#e5e7eb] dark:border-gray-700 pl-6 pr-6 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+<p class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-normal">Residential</p>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-gray-800 border border-[#e5e7eb] dark:border-gray-700 pl-6 pr-6 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+<p class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-normal">Commercial</p>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-gray-800 border border-[#e5e7eb] dark:border-gray-700 pl-6 pr-6 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+<p class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-normal">Mixed-Use</p>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Grid -->
+<section class="w-full bg-background-light dark:bg-background-dark py-6">
+<div class="max-w-[1440px] mx-auto px-4 sm:px-10">
+<div class="max-w-[1200px] mx-auto">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-4">
+<!-- Project Card 1 -->
+<div class="group flex flex-col gap-4 bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="w-full h-64 overflow-hidden relative">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover transform group-hover:scale-105 transition-transform duration-500" data-alt="Modern high-rise apartment building with glass facade against blue sky" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD_HHvuGqu7-bdyq7WRYs5svOMAknbfVXRPt6u_zCgc3j1_EW_zPHUJ8Rfi6d3Pk2-XubqEFhaN4lsIAFOaH-ZyjRDZgoPBHNGlN2bQv9TKwVVHU5FK2tKs-vLvIALOhAbKGGZN1ZyF96eTOHqfDYEQqeWhQBzaq6MsG0T2P2wG4Ck8b-TRg6aZuyIa7FHl7ld9GPBfn2_fjn-PMeWpWLI42B5LpyOHwsuhyFrdy_ezuliV8Opg5oLcN_OxxQp22vztZxdp2fC6KCA");'>
+</div>
+<div class="absolute top-4 left-4 bg-white/90 dark:bg-black/80 backdrop-blur-sm px-3 py-1 rounded-full">
+<span class="text-xs font-bold uppercase tracking-wider text-[#111418] dark:text-white">Residential</span>
+</div>
+</div>
+<div class="px-5 pb-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-[#111418] dark:text-white text-xl font-bold leading-tight group-hover:text-primary transition-colors">Skyline Heights</h3>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+<div class="flex items-center gap-1 mb-3 text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<p class="text-sm font-medium">Downtown District</p>
+</div>
+<p class="text-[#617589] dark:text-gray-400 text-sm leading-relaxed mb-4 flex-1">
+                                    Luxury high-rise apartments featuring panoramic city views, infinity pool, and smart home integration.
+                                </p>
+<div class="border-t border-gray-100 dark:border-gray-800 pt-4 flex gap-4 text-xs font-medium text-gray-500 dark:text-gray-400">
+<span>2022 Completed</span>
+<span>•</span>
+<span>45 Units</span>
+</div>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="group flex flex-col gap-4 bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="w-full h-64 overflow-hidden relative">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover transform group-hover:scale-105 transition-transform duration-500" data-alt="Sleek modern office building with sustainable green walls" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBOoLTc57Ib_JWSEX4IE9TxeKIIHvb5oIUkn13hNECrJwOs6g3smslaW6pEcQ6iOaiux2GRWdjzv5kbQExyXiLHALDV_MziFW-VNi4jp4T9P7H1SdFkNi0Uh_lJeBSrdgOZeoYK9YUl6MVLADKsp4ETXGpIlj-GxxSsaWdxrYrffPqm5crHg7aB4E2umziNLFn9T4OfKVItEBfvB7TrT2zu-7bbIVb4Ep3G2UPcrmGAkiNQ7Yus4eXQc_TwxZ-Ryf9xVkXHgcEnxP8");'>
+</div>
+<div class="absolute top-4 left-4 bg-white/90 dark:bg-black/80 backdrop-blur-sm px-3 py-1 rounded-full">
+<span class="text-xs font-bold uppercase tracking-wider text-[#111418] dark:text-white">Commercial</span>
+</div>
+</div>
+<div class="px-5 pb-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-[#111418] dark:text-white text-xl font-bold leading-tight group-hover:text-primary transition-colors">Emerald Business Park</h3>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+<div class="flex items-center gap-1 mb-3 text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<p class="text-sm font-medium">Business Hub</p>
+</div>
+<p class="text-[#617589] dark:text-gray-400 text-sm leading-relaxed mb-4 flex-1">
+                                    50,000 sq ft sustainable office space with LEED Platinum certification and collaborative workspaces.
+                                </p>
+<div class="border-t border-gray-100 dark:border-gray-800 pt-4 flex gap-4 text-xs font-medium text-gray-500 dark:text-gray-400">
+<span>2023 Completed</span>
+<span>•</span>
+<span>50k Sq Ft</span>
+</div>
+</div>
+</div>
+<!-- Project Card 3 -->
+<div class="group flex flex-col gap-4 bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="w-full h-64 overflow-hidden relative">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover transform group-hover:scale-105 transition-transform duration-500" data-alt="Luxury waterfront villas with private docks and boats" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDHG9tq3hMezQVzoE6RdoP-4scw0x8Oh5v-L1Oq2I1dXyMSK3Q8p1QOs5pBoLQp9Q2Te89ZSil9PPoooD0PU9u3r8AIZXtoSUJECTFstaMyL--vFd08uU54yxtBFikznf45LBM_dNlIaTpJ4fPG6bz2LRilKD1nfOp4HfefQupYHXSFUrFh9Hjy4MBfcT7r6JZXxwxcFtMQn9Nu4PCPv6A5wLYRSs4DzUOw479jxpm1UcIJ3IkxagaBuAwlK7orUhjwYUfpWlzR4OM");'>
+</div>
+<div class="absolute top-4 left-4 bg-white/90 dark:bg-black/80 backdrop-blur-sm px-3 py-1 rounded-full">
+<span class="text-xs font-bold uppercase tracking-wider text-[#111418] dark:text-white">Residential</span>
+</div>
+</div>
+<div class="px-5 pb-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-[#111418] dark:text-white text-xl font-bold leading-tight group-hover:text-primary transition-colors">The Harbor Villas</h3>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+<div class="flex items-center gap-1 mb-3 text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<p class="text-sm font-medium">North Shore</p>
+</div>
+<p class="text-[#617589] dark:text-gray-400 text-sm leading-relaxed mb-4 flex-1">
+                                    Exclusive waterfront residential community with private docks, clubhouse, and concierge services.
+                                </p>
+<div class="border-t border-gray-100 dark:border-gray-800 pt-4 flex gap-4 text-xs font-medium text-gray-500 dark:text-gray-400">
+<span>2021 Completed</span>
+<span>•</span>
+<span>12 Villas</span>
+</div>
+</div>
+</div>
+<!-- Project Card 4 -->
+<div class="group flex flex-col gap-4 bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="w-full h-64 overflow-hidden relative">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover transform group-hover:scale-105 transition-transform duration-500" data-alt="Mixed-use development with retail on ground floor and apartments above" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCmfwzs5D_aVR4WXhLTEkVHwcLuwopopGK0rWoqoIK2kp8badjDE9GGBQ0Han7YxTp7MBTn0p2ggCSRl2JQmcT9oAj5ZsrgdYoHHUWuzy1C_xH6bv8-1NxxvqgyP53MoM8sl0AF0Eqk8KsPVlvpOMLQakBgqP_kuxzcI2vP4SIy31qBSShxLJcEhvrgJUq04DZnQIOybS5eXnkYBt2F5lVJ2yQOmHPflEd-XJGaAnR36ETcOCv-MZxKOhyGwEQZntV866HwXJq1fMo");'>
+</div>
+<div class="absolute top-4 left-4 bg-white/90 dark:bg-black/80 backdrop-blur-sm px-3 py-1 rounded-full">
+<span class="text-xs font-bold uppercase tracking-wider text-[#111418] dark:text-white">Mixed-Use</span>
+</div>
+</div>
+<div class="px-5 pb-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-[#111418] dark:text-white text-xl font-bold leading-tight group-hover:text-primary transition-colors">Vertex Tower</h3>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+<div class="flex items-center gap-1 mb-3 text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<p class="text-sm font-medium">City Center</p>
+</div>
+<p class="text-[#617589] dark:text-gray-400 text-sm leading-relaxed mb-4 flex-1">
+                                    Modern mixed-use urban development featuring retail promenade on ground and luxury living spaces above.
+                                </p>
+<div class="border-t border-gray-100 dark:border-gray-800 pt-4 flex gap-4 text-xs font-medium text-gray-500 dark:text-gray-400">
+<span>2022 Completed</span>
+<span>•</span>
+<span>32 Stories</span>
+</div>
+</div>
+</div>
+<!-- Project Card 5 -->
+<div class="group flex flex-col gap-4 bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="w-full h-64 overflow-hidden relative">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover transform group-hover:scale-105 transition-transform duration-500" data-alt="Gated community entrance with lush landscaping and trees" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAR7xRtSe_ZX7HnR3LJzDwc3Hfn8mcvRb7Y7Nxli7ehZ1-vtp4cGSXdV4T5Z_PQkDBTeur_7y3sfDrDfJFxa2_hpIFf4JLWVFf4p0Ko4ij1cVLSSm9bGBO1odK5mwTF0VJOZOYc4Y7ZQQiKTKMNqFMD6wBpIo9bvLpkF1ELclLHMcJWHzDt2WuDUIppu8pGLz1xAz2FGjAOaAUHmjlJgywWxwqkJW1M2hjzDtMOQrKbJZGxeT7jlDvheuaFASD5DxkcwHAlhyV3ZEg");'>
+</div>
+<div class="absolute top-4 left-4 bg-white/90 dark:bg-black/80 backdrop-blur-sm px-3 py-1 rounded-full">
+<span class="text-xs font-bold uppercase tracking-wider text-[#111418] dark:text-white">Residential</span>
+</div>
+</div>
+<div class="px-5 pb-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-[#111418] dark:text-white text-xl font-bold leading-tight group-hover:text-primary transition-colors">Riverfront Estates</h3>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+<div class="flex items-center gap-1 mb-3 text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<p class="text-sm font-medium">Suburbs</p>
+</div>
+<p class="text-[#617589] dark:text-gray-400 text-sm leading-relaxed mb-4 flex-1">
+                                    A gated community focused on green living, featuring extensive parks, walking trails, and eco-friendly homes.
+                                </p>
+<div class="border-t border-gray-100 dark:border-gray-800 pt-4 flex gap-4 text-xs font-medium text-gray-500 dark:text-gray-400">
+<span>2020 Completed</span>
+<span>•</span>
+<span>100+ Homes</span>
+</div>
+</div>
+</div>
+<!-- Project Card 6 -->
+<div class="group flex flex-col gap-4 bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="w-full h-64 overflow-hidden relative">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover transform group-hover:scale-105 transition-transform duration-500" data-alt="Large modern shopping mall interior with glass atrium" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCzWyE0VZeKhHgAtS0hp1Fy49mRCrpBZtnQXdD62X0MUO4WD7G5OzgLQzyRHRqC0acEIeQ2_q850tSbrtoQY-R2-5Wuxz0hWMZfmV7260F_WfNgOzuN5b1YK1a_JLAJmVStmu9qMqW4gzImB2BJbrBeqziJHuo0KoDolnG6UEjyHOsP2g5XGRnRhcNJrYMhb7b0q11vx128qSjMiv19Jg_LbOtSHsXA-cMCEskOC2FHRTP69xFxENTeHJhfJNhZWtBp-YmJyQcvBl4");'>
+</div>
+<div class="absolute top-4 left-4 bg-white/90 dark:bg-black/80 backdrop-blur-sm px-3 py-1 rounded-full">
+<span class="text-xs font-bold uppercase tracking-wider text-[#111418] dark:text-white">Commercial</span>
+</div>
+</div>
+<div class="px-5 pb-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-[#111418] dark:text-white text-xl font-bold leading-tight group-hover:text-primary transition-colors">Oakwood Mall</h3>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+<div class="flex items-center gap-1 mb-3 text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<p class="text-sm font-medium">West End</p>
+</div>
+<p class="text-[#617589] dark:text-gray-400 text-sm leading-relaxed mb-4 flex-1">
+                                    The premier shopping and entertainment complex in the West End, featuring cinema, food courts, and premium retail.
+                                </p>
+<div class="border-t border-gray-100 dark:border-gray-800 pt-4 flex gap-4 text-xs font-medium text-gray-500 dark:text-gray-400">
+<span>2019 Completed</span>
+<span>•</span>
+<span>120 Stores</span>
+</div>
+</div>
+</div>
+</div>
+<!-- View All / Pagination (Optional visual cue) -->
+<div class="flex justify-center mt-8 mb-4">
+<button class="text-[#617589] dark:text-gray-400 text-sm font-medium hover:text-primary transition-colors flex items-center gap-2">
+                            Load More Projects
+                            <span class="material-symbols-outlined">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="w-full bg-white dark:bg-background-dark py-12 border-t border-gray-100 dark:border-gray-800">
+<div class="max-w-[1440px] mx-auto px-4 sm:px-10">
+<div class="max-w-[960px] mx-auto">
+<div class="flex flex-col items-center justify-center gap-6 px-4 py-10 bg-background-light dark:bg-gray-900 rounded-2xl">
+<div class="flex flex-col gap-3 text-center">
+<h2 class="text-[#111418] dark:text-white tracking-tight text-[32px] font-black leading-tight max-w-[720px]">
+                                Ready to build with us?
+                            </h2>
+<p class="text-[#617589] dark:text-gray-400 text-base font-normal leading-normal max-w-[600px] mx-auto">
+                                Inspired by our completed projects? Let's discuss how we can bring your vision to life. Download our full brochure or start a conversation today.
+                            </p>
+</div>
+<div class="flex gap-4 flex-col sm:flex-row w-full sm:w-auto">
+<button class="flex min-w-[160px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-blue-600 transition-colors shadow-lg shadow-blue-500/20">
+<span class="truncate">Download Brochure</span>
+</button>
+<button class="flex min-w-[160px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-[#111418] dark:text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+<span class="truncate">Contact Sales</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Professional Footer -->
+<footer class="bg-white text-black pt-16 pb-8">
+<div class="max-w-[1440px] mx-auto px-4 sm:px-10">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+<!-- Brand Column -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="size-8 flex items-center justify-center rounded bg-primary/10 text-primary">
+<span class="material-symbols-outlined">apartment</span>
+</div>
+<h3 class="text-xl font-bold ">Developers Co.</h3>
+</div>
+<p class="text-gray-400 text-sm leading-relaxed">
+                        Building the future with precision, innovation, and sustainable practices. Your trusted partner in real estate development since 1995.
+                    </p>
+<div class="flex gap-4 mt-2">
+<a class="text-gray-400 hover:text-white transition-colors" href="#"><i class="material-symbols-outlined">public</i></a>
+<a class="text-gray-400 hover:text-white transition-colors" href="#"><i class="material-symbols-outlined">alternate_email</i></a>
+<a class="text-gray-400 hover:text-white transition-colors" href="#"><i class="material-symbols-outlined">share</i></a>
+</div>
+</div>
+<!-- Quick Links -->
+<div>
+<h4 class="text-lg font-bold mb-4">Company</h4>
+<ul class="flex flex-col gap-2">
+<li><a class="text-gray-400 text-sm hover:text-primary transition-colors" href="#">About Us</a></li>
+<li><a class="text-gray-400 text-sm hover:text-primary transition-colors" href="#">Our Team</a></li>
+<li><a class="text-gray-400 text-sm hover:text-primary transition-colors" href="#">Careers</a></li>
+<li><a class="text-gray-400 text-sm hover:text-primary transition-colors" href="#">News &amp; Insights</a></li>
+</ul>
+</div>
+<!-- Projects -->
+<div>
+<h4 class="text-lg font-bold mb-4">Projects</h4>
+<ul class="flex flex-col gap-2">
+<li><a class="text-gray-400 text-sm hover:text-primary transition-colors" href="#">Residential</a></li>
+<li><a class="text-gray-400 text-sm hover:text-primary transition-colors" href="#">Commercial</a></li>
+<li><a class="text-gray-400 text-sm hover:text-primary transition-colors" href="#">Mixed-Use</a></li>
+<li><a class="text-gray-400 text-sm hover:text-primary transition-colors" href="#">Urban Regeneration</a></li>
+</ul>
+</div>
+<!-- Contact Info -->
+<div>
+<h4 class="text-lg font-bold mb-4">Contact</h4>
+<ul class="flex flex-col gap-3">
+<li class="flex items-start gap-3 text-gray-400 text-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">location_on</span>
+<span>123 Innovation Blvd, Suite 400<br/>Metropolis, NY 10012</span>
+</li>
+<li class="flex items-center gap-3 text-gray-400 text-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">phone</span>
+<span>+1 (555) 123-4567</span>
+</li>
+<li class="flex items-center gap-3 text-gray-400 text-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">mail</span>
+<span>hello@apexdevelopers.com</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-gray-500 text-sm">© 2023 Apex Developers. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-gray-500 text-sm hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="text-gray-500 text-sm hover:text-white transition-colors" href="#">Terms of Service</a>
+<a class="text-gray-500 text-sm hover:text-white transition-colors" href="#">Cookie Settings</a>
+</div>
+</div>
+</div>
+</footer>
+
+<script>
+    (function(){
+        var open = document.getElementById('openNav');
+        var close = document.getElementById('closeNav');
+        var drawer = document.getElementById('navDrawer');
+        var backdrop = document.getElementById('navBackdrop');
+        function show(){ if(drawer) { drawer.classList.remove('translate-x-full'); drawer.classList.add('translate-x-0'); } if(backdrop) backdrop.classList.remove('hidden'); }
+        function hide(){ if(drawer) { drawer.classList.add('translate-x-full'); drawer.classList.remove('translate-x-0'); } if(backdrop) backdrop.classList.add('hidden'); }
+        if(open) open.addEventListener('click', show);
+        if(close) close.addEventListener('click', hide);
+        if(backdrop) backdrop.addEventListener('click', hide);
+        var links = document.querySelectorAll('#navDrawer a');
+        links.forEach(function(a){ a.addEventListener('click', hide); });
+    })();
+</script>
+
+</body></html>

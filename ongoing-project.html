@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ongoing Projects - Apex Developers</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white font-display">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Header / TopNavBar -->
+<header class="relative flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f4] dark:border-b-gray-800 bg-white dark:bg-[#1a222d] px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-4 text-[#111418] dark:text-white">
+    <button id="openNav" class="p-2 lg:hidden absolute right-4 top-3 text-[#111418] dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors">
+        <span class="material-symbols-outlined">menu</span>
+    </button>
+   <div class="size-8 flex items-center justify-center rounded bg-primary/10 text-primary">
+<span class="material-symbols-outlined">apartment</span>
+</div>
+<h2 class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Developers Co.</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="hidden lg:flex items-center gap-9">
+    <a class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="home.html">Home</a>
+    <a class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="listing.html">Projects</a>
+    <a class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="ongoing-project.html">Ongoing</a>
+    <a class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="gallery.html">Gallery</a>
+    <a class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="completed.html">Completed</a>
+    <a class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="about.html">About Us</a>
+    <a class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="contact.html">Contact</a>
+</div>
+<!-- Mobile nav backdrop -->
+<div id="navBackdrop" class="fixed inset-0 z-40 hidden bg-black/40 lg:hidden"></div>
+<!-- Mobile nav drawer -->
+<nav id="navDrawer" class="fixed right-0 top-0 z-50 h-full w-[84%] max-w-sm transform translate-x-full bg-white dark:bg-[#0b1520] p-6 transition-transform lg:hidden">
+    <div class="flex items-center justify-between mb-6">
+        <div class="flex items-center gap-3">
+           <div class="size-8 flex items-center justify-center rounded bg-primary/10 text-primary">
+<span class="material-symbols-outlined">apartment</span>
+</div>
+            <h3 class="text-lg font-bold text-[#111418] dark:text-white">Developers Co.</h3>
+        </div>
+        <button id="closeNav" class="p-2 text-gray-600 dark:text-gray-300">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+    </div>
+    <ul class="flex flex-col gap-4 mb-6">
+        <li><a class="text-[#111418] dark:text-gray-200 text-base font-medium hover:text-primary" href="home.html">Home</a></li>
+        <li><a class="text-[#111418] dark:text-gray-200 text-base font-medium hover:text-primary" href="listing.html">Projects</a></li>
+        <li><a class="text-[#111418] dark:text-gray-200 text-base font-medium hover:text-primary" href="ongoing-project.html">Ongoing</a></li>
+        <li><a class="text-[#111418] dark:text-gray-200 text-base font-medium hover:text-primary" href="gallery.html">Gallery</a></li>
+        <li><a class="text-[#111418] dark:text-gray-200 text-base font-medium hover:text-primary" href="completed.html">Completed</a></li>
+        <li><a class="text-[#111418] dark:text-gray-200 text-base font-medium hover:text-primary" href="about.html">About Us</a></li>
+        <li><a class="text-[#111418] dark:text-gray-200 text-base font-medium hover:text-primary" href="contact.html">Contact</a></li>
+    </ul>
+    <!-- Mobile enquiry removed to avoid duplicate CTA in mobile header -->
+</nav>
+<button class="hidden lg:flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary hover:bg-blue-600 transition-colors text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Enquire Now</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-5 md:px-20 lg:px-40 flex flex-1 justify-center py-10">
+<div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+<!-- Page Heading -->
+<div class="flex flex-wrap justify-between gap-3 p-4 mb-2">
+<div class="flex min-w-72 flex-col gap-3">
+<h1 class="text-[#111418] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Ongoing Projects</h1>
+<p class="text-[#617589] dark:text-gray-400 text-base font-normal leading-normal">Shaping the Skyline: Explore our active developments and their real-time construction status.</p>
+</div>
+</div>
+<!-- Filters -->
+<div class="flex gap-3 p-4 flex-wrap items-center border-y border-[#e5e7eb] dark:border-gray-800 bg-white dark:bg-[#1a222d] rounded-lg mb-8 shadow-sm">
+<div class="flex items-center gap-2 mr-2">
+<span class="material-symbols-outlined text-gray-500">filter_list</span>
+<span class="text-sm font-bold">Filters:</span>
+</div>
+<button class="group flex h-9 items-center justify-center gap-x-2 rounded-lg border border-[#e5e7eb] dark:border-gray-700 hover:border-primary bg-white dark:bg-[#252f3e] px-4 transition-all">
+<p class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-normal">Location</p>
+<span class="material-symbols-outlined text-[#111418] dark:text-gray-200 text-[20px]">expand_more</span>
+</button>
+<button class="group flex h-9 items-center justify-center gap-x-2 rounded-lg border border-[#e5e7eb] dark:border-gray-700 hover:border-primary bg-white dark:bg-[#252f3e] px-4 transition-all">
+<p class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-normal">Price Range</p>
+<span class="material-symbols-outlined text-[#111418] dark:text-gray-200 text-[20px]">expand_more</span>
+</button>
+<button class="group flex h-9 items-center justify-center gap-x-2 rounded-lg border border-[#e5e7eb] dark:border-gray-700 hover:border-primary bg-white dark:bg-[#252f3e] px-4 transition-all">
+<p class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-normal">Property Type</p>
+<span class="material-symbols-outlined text-[#111418] dark:text-gray-200 text-[20px]">expand_more</span>
+</button>
+<div class="flex-1"></div>
+<button class="flex h-9 items-center justify-center gap-x-2 rounded-lg bg-[#f0f2f4] dark:bg-[#252f3e] px-4 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+<p class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-normal">Sort: Completion Date</p>
+<span class="material-symbols-outlined text-[#111418] dark:text-gray-200 text-[20px]">sort</span>
+</button>
+</div>
+<!-- Projects Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-4">
+<!-- Project Card 1 -->
+<div class="flex flex-col overflow-hidden rounded-xl bg-white dark:bg-[#1a222d] shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.12)] hover:-translate-y-1 transition-all duration-300 group">
+<div class="relative h-60 w-full bg-cover bg-center" data-alt="Modern high rise glass building during golden hour" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAlMHmPJO-dEHrlEP2m0lQJWmXmYYu2P0YIE4yunxdYWn39mRRznmPIUgjebscgVLrsGmGElq-54oERcTSFvKPjFPTjN4AtZYZhXH_V31PdM6Z7rBL5BljfOQCDTo00LtoBLFbpCSkSyElhQzPDBJV1FtzsuLuGaeDEkA6VlTeOble1LMY3Tc4nZTrgniU9YIBHyB5HTGHhfFzNdSoxs5yFSi7XBNxDGt0yGY35FxDhq1BZCpaXM8uUTE7xhrEsfiuSKupzYvaVnJw");'>
+<div class="absolute top-3 right-3 bg-white/95 dark:bg-[#101922]/95 backdrop-blur px-3 py-1.5 rounded-md text-xs font-bold text-primary shadow-sm border border-gray-100 dark:border-gray-800">
+                                        Possession: Dec 2024
+                                    </div>
+<div class="absolute bottom-3 left-3 bg-black/60 backdrop-blur-sm px-3 py-1 rounded text-xs font-medium text-white flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+                                        West Avenue, Sector 45
+                                    </div>
+</div>
+<div class="flex flex-col gap-4 p-5">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight">Greenwood Estates</h3>
+<p class="text-[#617589] dark:text-gray-400 text-sm mt-1">3 &amp; 4 BHK Luxury Apartments</p>
+</div>
+<div class="text-[#111418] dark:text-white font-bold text-lg">$450k+</div>
+</div>
+<!-- Progress Section -->
+<div class="bg-background-light dark:bg-[#252f3e] p-3 rounded-lg border border-gray-100 dark:border-gray-800">
+<div class="flex justify-between items-center mb-2">
+<span class="text-xs font-semibold text-[#111418] dark:text-gray-200 uppercase tracking-wide">Construction Status</span>
+<span class="text-xs font-bold text-primary">75%</span>
+</div>
+<div class="h-2 w-full bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 75%"></div>
+</div>
+<p class="text-xs text-[#617589] dark:text-gray-400 mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-green-600">check_circle</span>
+                                            Structure Complete
+                                        </p>
+</div>
+<div class="flex gap-3 pt-2">
+<button class="flex-1 h-10 items-center justify-center rounded-lg bg-primary text-white text-sm font-bold hover:bg-blue-600 transition-colors">
+                                            View Details
+                                        </button>
+<button class="h-10 w-10 flex items-center justify-center rounded-lg border border-gray-200 dark:border-gray-700 text-[#111418] dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors" title="Download Brochure">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="flex flex-col overflow-hidden rounded-xl bg-white dark:bg-[#1a222d] shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.12)] hover:-translate-y-1 transition-all duration-300 group">
+<div class="relative h-60 w-full bg-cover bg-center" data-alt="Render of a luxury villa with swimming pool" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC8NEcuIUgB4xmAf4Xa30pdiEhUZsIMDRm30NZ2bzGwFdsLvlTBWSWHSTDv25X7ESLuJ3PNbWBI093lkcy5lopMdjDOUWzBQIPAKPEny_0lqojCxbRrOIcgKLFa_KZu6KBOIdqkY71sYllN5r_Xd4XCZ8jTlNygqkBeMrhPcUPMfKKGwYUJLr1y6e_sZPJ8QH1OWvoTwJiqzQJ5vmt8c6oJ_LFtWnD14FItmMTuO8Ny7yQjCha84E5I-ArYyN_J-iyNJ6Qexs0WJu8");'>
+<div class="absolute top-3 right-3 bg-white/95 dark:bg-[#101922]/95 backdrop-blur px-3 py-1.5 rounded-md text-xs font-bold text-primary shadow-sm border border-gray-100 dark:border-gray-800">
+                                        Possession: June 2025
+                                    </div>
+<div class="absolute bottom-3 left-3 bg-black/60 backdrop-blur-sm px-3 py-1 rounded text-xs font-medium text-white flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+                                        Palm Hills, North District
+                                    </div>
+</div>
+<div class="flex flex-col gap-4 p-5">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight">The Azure Villas</h3>
+<p class="text-[#617589] dark:text-gray-400 text-sm mt-1">5 BHK Premium Villas</p>
+</div>
+<div class="text-[#111418] dark:text-white font-bold text-lg">$1.2M+</div>
+</div>
+<!-- Progress Section -->
+<div class="bg-background-light dark:bg-[#252f3e] p-3 rounded-lg border border-gray-100 dark:border-gray-800">
+<div class="flex justify-between items-center mb-2">
+<span class="text-xs font-semibold text-[#111418] dark:text-gray-200 uppercase tracking-wide">Construction Status</span>
+<span class="text-xs font-bold text-primary">45%</span>
+</div>
+<div class="h-2 w-full bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 45%"></div>
+</div>
+<p class="text-xs text-[#617589] dark:text-gray-400 mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-blue-500">engineering</span>
+                                            Second Floor Slab
+                                        </p>
+</div>
+<div class="flex gap-3 pt-2">
+<button class="flex-1 h-10 items-center justify-center rounded-lg bg-primary text-white text-sm font-bold hover:bg-blue-600 transition-colors">
+                                            View Details
+                                        </button>
+<button class="h-10 w-10 flex items-center justify-center rounded-lg border border-gray-200 dark:border-gray-700 text-[#111418] dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors" title="Download Brochure">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Project Card 3 -->
+<div class="flex flex-col overflow-hidden rounded-xl bg-white dark:bg-[#1a222d] shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.12)] hover:-translate-y-1 transition-all duration-300 group">
+<div class="relative h-60 w-full bg-cover bg-center" data-alt="Wide angle shot of a commercial complex construction site" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB3o5JYP4xr6bdUhnn038VMP3GE8XaJWz5YwrrEgct2XPOjCQ8wp3__JYyNJErroFGa3XOG6Wg8HtpJ2gNijms9fo8HnXXI0yETjF5VEmqNesG7lZCyyNtA6jpaBhfJW17XViaY29VxqhJIYSJO5uC3mBAouu50zKn2JU5RB3kJPFd30_SkSQVkTU0KUzBrcVWmYexnB5m-PD0qBHWoXgMImC_W_sIxhifByZuR4-lmJAiWUfm0Ti8bzDEN6nP0lF_aZvT5urysErE");'>
+<div class="absolute top-3 right-3 bg-white/95 dark:bg-[#101922]/95 backdrop-blur px-3 py-1.5 rounded-md text-xs font-bold text-primary shadow-sm border border-gray-100 dark:border-gray-800">
+                                        Possession: Mar 2026
+                                    </div>
+<div class="absolute bottom-3 left-3 bg-black/60 backdrop-blur-sm px-3 py-1 rounded text-xs font-medium text-white flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+                                        Downtown, Financial Dist.
+                                    </div>
+</div>
+<div class="flex flex-col gap-4 p-5">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight">Apex Tech Park</h3>
+<p class="text-[#617589] dark:text-gray-400 text-sm mt-1">Commercial Office Spaces</p>
+</div>
+<div class="text-[#111418] dark:text-white font-bold text-lg">$250k+</div>
+</div>
+<!-- Progress Section -->
+<div class="bg-background-light dark:bg-[#252f3e] p-3 rounded-lg border border-gray-100 dark:border-gray-800">
+<div class="flex justify-between items-center mb-2">
+<span class="text-xs font-semibold text-[#111418] dark:text-gray-200 uppercase tracking-wide">Construction Status</span>
+<span class="text-xs font-bold text-primary">15%</span>
+</div>
+<div class="h-2 w-full bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 15%"></div>
+</div>
+<p class="text-xs text-[#617589] dark:text-gray-400 mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-orange-500">foundation</span>
+                                            Foundation Work
+                                        </p>
+</div>
+<div class="flex gap-3 pt-2">
+<button class="flex-1 h-10 items-center justify-center rounded-lg bg-primary text-white text-sm font-bold hover:bg-blue-600 transition-colors">
+                                            View Details
+                                        </button>
+<button class="h-10 w-10 flex items-center justify-center rounded-lg border border-gray-200 dark:border-gray-700 text-[#111418] dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors" title="Download Brochure">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Project Card 4 -->
+<div class="flex flex-col overflow-hidden rounded-xl bg-white dark:bg-[#1a222d] shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.12)] hover:-translate-y-1 transition-all duration-300 group">
+<div class="relative h-60 w-full bg-cover bg-center" data-alt="Abstract rendering of a gated community entrance" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD5M53HhcDp3kQRd9DvKRxOa6JC0kkUNabuhdnIAA62qLheZ_YN5WCOVU-D3ghdEwqnd7yVg9WdbHURRz4ygwDuLTumlooKGZ1KIBd_npEuuchnlHL-zSX7BdPK2HWb7HgD8zWj7Q6Ls-gdoqkF_ZW5RX21zK5Pct6yuNYS1OAsuWozj-QpqrsJEEcO28r4NcBPgHrux359L86D95Uk8L9zjsXYrJ3Y6SsKxDuJUNFW_6p-p4oqSXsK6yV8ZNpsPG8k1-t8WcZhn0A");'>
+<div class="absolute top-3 right-3 bg-white/95 dark:bg-[#101922]/95 backdrop-blur px-3 py-1.5 rounded-md text-xs font-bold text-primary shadow-sm border border-gray-100 dark:border-gray-800">
+                                        Possession: Aug 2025
+                                    </div>
+<div class="absolute bottom-3 left-3 bg-black/60 backdrop-blur-sm px-3 py-1 rounded text-xs font-medium text-white flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+                                        Riverside, East End
+                                    </div>
+</div>
+<div class="flex flex-col gap-4 p-5">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight">Riverview Heights</h3>
+<p class="text-[#617589] dark:text-gray-400 text-sm mt-1">2 &amp; 3 BHK Apartments</p>
+</div>
+<div class="text-[#111418] dark:text-white font-bold text-lg">$320k+</div>
+</div>
+<!-- Progress Section -->
+<div class="bg-background-light dark:bg-[#252f3e] p-3 rounded-lg border border-gray-100 dark:border-gray-800">
+<div class="flex justify-between items-center mb-2">
+<span class="text-xs font-semibold text-[#111418] dark:text-gray-200 uppercase tracking-wide">Construction Status</span>
+<span class="text-xs font-bold text-primary">55%</span>
+</div>
+<div class="h-2 w-full bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 55%"></div>
+</div>
+<p class="text-xs text-[#617589] dark:text-gray-400 mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-blue-500">format_paint</span>
+                                            Internal Plastering
+                                        </p>
+</div>
+<div class="flex gap-3 pt-2">
+<button class="flex-1 h-10 items-center justify-center rounded-lg bg-primary text-white text-sm font-bold hover:bg-blue-600 transition-colors">
+                                            View Details
+                                        </button>
+<button class="h-10 w-10 flex items-center justify-center rounded-lg border border-gray-200 dark:border-gray-700 text-[#111418] dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors" title="Download Brochure">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Project Card 5 -->
+<div class="flex flex-col overflow-hidden rounded-xl bg-white dark:bg-[#1a222d] shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.12)] hover:-translate-y-1 transition-all duration-300 group">
+<div class="relative h-60 w-full bg-cover bg-center" data-alt="Rendering of a sleek modern apartment complex" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD35gNuUBYt8ZcpJwbisZnZOuCf_4IK9j5xBBkDhiJZua-WweEgVhh_isK6lfnV2tl9xUkXH1Plne1tgjKY8xakufSzRWDzydRfsCd0cimiz0SCKBCtGMqwI2i6mg79taAWilEEuYUvNTrbs-IYePT7-7Ii3ccmscPU-ctEy7zRCmIBk2t6Cz5yv9dJw2aROfiomBEyFGzICj6MvYeclXfS1_WKJig3m6t_J9oYpHLBVeukNu_GF5h-ceDCpK3YT13ya3wR_6C_lxo");'>
+<div class="absolute top-3 right-3 bg-white/95 dark:bg-[#101922]/95 backdrop-blur px-3 py-1.5 rounded-md text-xs font-bold text-primary shadow-sm border border-gray-100 dark:border-gray-800">
+                                        Possession: Feb 2025
+                                    </div>
+<div class="absolute bottom-3 left-3 bg-black/60 backdrop-blur-sm px-3 py-1 rounded text-xs font-medium text-white flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+                                        Hilltop, South Ridge
+                                    </div>
+</div>
+<div class="flex flex-col gap-4 p-5">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight">Skyline Residency</h3>
+<p class="text-[#617589] dark:text-gray-400 text-sm mt-1">Penthouse &amp; Duplexes</p>
+</div>
+<div class="text-[#111418] dark:text-white font-bold text-lg">$850k+</div>
+</div>
+<!-- Progress Section -->
+<div class="bg-background-light dark:bg-[#252f3e] p-3 rounded-lg border border-gray-100 dark:border-gray-800">
+<div class="flex justify-between items-center mb-2">
+<span class="text-xs font-semibold text-[#111418] dark:text-gray-200 uppercase tracking-wide">Construction Status</span>
+<span class="text-xs font-bold text-primary">85%</span>
+</div>
+<div class="h-2 w-full bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 85%"></div>
+</div>
+<p class="text-xs text-[#617589] dark:text-gray-400 mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-green-500">weekend</span>
+                                            Interiors Finishing
+                                        </p>
+</div>
+<div class="flex gap-3 pt-2">
+<button class="flex-1 h-10 items-center justify-center rounded-lg bg-primary text-white text-sm font-bold hover:bg-blue-600 transition-colors">
+                                            View Details
+                                        </button>
+<button class="h-10 w-10 flex items-center justify-center rounded-lg border border-gray-200 dark:border-gray-700 text-[#111418] dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors" title="Download Brochure">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Project Card 6 -->
+<div class="flex flex-col overflow-hidden rounded-xl bg-white dark:bg-[#1a222d] shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.12)] hover:-translate-y-1 transition-all duration-300 group">
+<div class="relative h-60 w-full bg-cover bg-center" data-alt="Close up architectural detail of balconies" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDtBGfs6GSnXnuNWgzVVyPyVfOhntX-Sdc4K43C9IquMW9UZpg8FGQPC9xU_JzMmtHVfs9Nv5YPjvD-Fcn4qSbjtl7SdAn8W5Z2mnBvSMkMMTwoe2Vrzu2EFbL3UaTgKSHpd-flP7SV6nNP1SnF_Hzm7PGKACJBxWaHAzVIn_82UxdjjGBvXc4otl8KkR_gYQeIFIkoc58CR5qv-LuxzCajWDbcjGh2f6MQvMdAef-mCq7RR1ma_ru3P22M1t9x4J5DPCSObo_P1_E");'>
+<div class="absolute top-3 right-3 bg-white/95 dark:bg-[#101922]/95 backdrop-blur px-3 py-1.5 rounded-md text-xs font-bold text-primary shadow-sm border border-gray-100 dark:border-gray-800">
+                                        Possession: Nov 2026
+                                    </div>
+<div class="absolute bottom-3 left-3 bg-black/60 backdrop-blur-sm px-3 py-1 rounded text-xs font-medium text-white flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+                                        Metro Corridor
+                                    </div>
+</div>
+<div class="flex flex-col gap-4 p-5">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight">Urban Lofts</h3>
+<p class="text-[#617589] dark:text-gray-400 text-sm mt-1">Studio &amp; 1 BHK</p>
+</div>
+<div class="text-[#111418] dark:text-white font-bold text-lg">$180k+</div>
+</div>
+<!-- Progress Section -->
+<div class="bg-background-light dark:bg-[#252f3e] p-3 rounded-lg border border-gray-100 dark:border-gray-800">
+<div class="flex justify-between items-center mb-2">
+<span class="text-xs font-semibold text-[#111418] dark:text-gray-200 uppercase tracking-wide">Construction Status</span>
+<span class="text-xs font-bold text-primary">10%</span>
+</div>
+<div class="h-2 w-full bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 10%"></div>
+</div>
+<p class="text-xs text-[#617589] dark:text-gray-400 mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-gray-500">architecture</span>
+                                            Excavation
+                                        </p>
+</div>
+<div class="flex gap-3 pt-2">
+<button class="flex-1 h-10 items-center justify-center rounded-lg bg-primary text-white text-sm font-bold hover:bg-blue-600 transition-colors">
+                                            View Details
+                                        </button>
+<button class="h-10 w-10 flex items-center justify-center rounded-lg border border-gray-200 dark:border-gray-700 text-[#111418] dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors" title="Download Brochure">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Lead Capture Section -->
+<section class="bg-[#101922] py-12 px-5 md:px-20 lg:px-40">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="max-w-lg">
+<h2 class="text-white text-2xl font-bold mb-2">Don't miss a beat.</h2>
+<p class="text-gray-400 text-sm leading-relaxed">Get the latest construction updates, new launch alerts, and exclusive pricing delivered directly to your inbox.</p>
+</div>
+<div class="w-full max-w-md flex gap-2">
+<input class="flex-1 h-12 rounded-lg border-0 bg-white/10 px-4 text-white placeholder:text-gray-500 focus:ring-2 focus:ring-primary focus:outline-none" placeholder="Enter your email address" type="email"/>
+<button class="h-12 bg-primary hover:bg-blue-600 px-6 rounded-lg text-white font-bold text-sm transition-colors whitespace-nowrap">
+                            Subscribe
+                        </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Sticky Contact Widget -->
+<div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+<button class="group flex items-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white p-3 md:px-5 md:py-3 rounded-full shadow-lg transition-all hover:scale-105">
+<span class="text-2xl" style="font-family: sans-serif; font-weight: bold;">WA</span> <!-- Replaced with text as whatsapp icon is not in Material Symbols -->
+<span class="hidden md:inline font-bold text-sm">Chat on WhatsApp</span>
+</button>
+<button class="group flex items-center gap-2 bg-primary hover:bg-blue-600 text-white p-3 md:px-5 md:py-3 rounded-full shadow-lg transition-all hover:scale-105">
+<span class="material-symbols-outlined text-white">call</span>
+<span class="hidden md:inline font-bold text-sm">Call Sales</span>
+</button>
+</div>
+<!-- Footer -->
+<footer class="bg-white dark:bg-[#1a222d] border-t border-[#f0f2f4] dark:border-gray-800 py-12 px-5 md:px-20 lg:px-40">
+<div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2 text-[#111418] dark:text-white">
+<div class="size-8 flex items-center justify-center rounded bg-primary/10 text-primary">
+<span class="material-symbols-outlined">apartment</span>
+</div>
+<h2 class="text-lg font-bold">Apex Developers</h2>
+</div>
+<p class="text-sm text-[#617589] dark:text-gray-400">Building dreams into reality with over 20 years of excellence in real estate development.</p>
+</div>
+<div>
+<h4 class="font-bold text-[#111418] dark:text-white mb-4">Quick Links</h4>
+<div class="flex flex-col gap-2">
+<a class="text-sm text-[#617589] dark:text-gray-400 hover:text-primary transition-colors" href="#">Our Story</a>
+<a class="text-sm text-[#617589] dark:text-gray-400 hover:text-primary transition-colors" href="#">Completed Projects</a>
+<a class="text-sm text-[#617589] dark:text-gray-400 hover:text-primary transition-colors" href="#">Ongoing Projects</a>
+<a class="text-sm text-[#617589] dark:text-gray-400 hover:text-primary transition-colors" href="#">Careers</a>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-[#111418] dark:text-white mb-4">Support</h4>
+<div class="flex flex-col gap-2">
+<a class="text-sm text-[#617589] dark:text-gray-400 hover:text-primary transition-colors" href="#">Contact Us</a>
+<a class="text-sm text-[#617589] dark:text-gray-400 hover:text-primary transition-colors" href="#">FAQs</a>
+<a class="text-sm text-[#617589] dark:text-gray-400 hover:text-primary transition-colors" href="#">EMI Calculator</a>
+<a class="text-sm text-[#617589] dark:text-gray-400 hover:text-primary transition-colors" href="#">Privacy Policy</a>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-[#111418] dark:text-white mb-4">Contact</h4>
+<div class="flex flex-col gap-3">
+<p class="text-sm text-[#617589] dark:text-gray-400 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                            123 Apex Tower, Financial District, City
+                        </p>
+<p class="text-sm text-[#617589] dark:text-gray-400 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">call</span>
+                            +1 (555) 123-4567
+                        </p>
+<p class="text-sm text-[#617589] dark:text-gray-400 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">mail</span>
+                            sales@apexdevelopers.com
+                        </p>
+</div>
+</div>
+</div>
+<div class="max-w-[1200px] mx-auto mt-12 pt-8 border-t border-[#f0f2f4] dark:border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-xs text-[#617589] dark:text-gray-500">© 2024 Apex Developers. All rights reserved.</p>
+<div class="flex gap-4">
+<a class="text-[#617589] hover:text-primary dark:text-gray-500 dark:hover:text-white transition-colors" href="#"><span class="material-symbols-outlined text-[20px]">public</span></a>
+<!-- Using generic icons as placeholders for social media -->
+<a class="text-[#617589] hover:text-primary dark:text-gray-500 dark:hover:text-white transition-colors" href="#"><span class="material-symbols-outlined text-[20px]">share</span></a>
+<a class="text-[#617589] hover:text-primary dark:text-gray-500 dark:hover:text-white transition-colors" href="#"><span class="material-symbols-outlined text-[20px]">rss_feed</span></a>
+</div>
+</div>
+</footer>
+</div>
+
+<script>
+    (function(){
+        var open = document.getElementById('openNav');
+        var close = document.getElementById('closeNav');
+        var drawer = document.getElementById('navDrawer');
+        var backdrop = document.getElementById('navBackdrop');
+        function show(){ if(drawer) { drawer.classList.remove('translate-x-full'); drawer.classList.add('translate-x-0'); } if(backdrop) backdrop.classList.remove('hidden'); }
+        function hide(){ if(drawer) { drawer.classList.add('translate-x-full'); drawer.classList.remove('translate-x-0'); } if(backdrop) backdrop.classList.add('hidden'); }
+        if(open) open.addEventListener('click', show);
+        if(close) close.addEventListener('click', hide);
+        if(backdrop) backdrop.addEventListener('click', hide);
+        var links = document.querySelectorAll('#navDrawer a');
+        links.forEach(function(a){ a.addEventListener('click', hide); });
+    })();
+</script>
+
+</body></html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Luxury Estates - Project Gallery</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white overflow-x-hidden">
+<!-- Header: unified Apex Developers header -->
+<header class="relative flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f4] dark:border-b-gray-800 bg-white dark:bg-[#1a222d] px-10 py-3 sticky top-0 z-50">
+    <div class="flex items-center gap-4 text-[#111418] dark:text-white">
+        <button id="openNav" class="p-2 lg:hidden absolute right-4 top-3 text-[#111418] dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+       <div class="size-8 flex items-center justify-center rounded bg-primary/10 text-primary">
+<span class="material-symbols-outlined">apartment</span>
+</div>
+        <h2 class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Developers Co.</h2>
+    </div>
+    <div class="flex flex-1 justify-end gap-8">
+        <div class="hidden lg:flex items-center gap-9">
+            <a class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="home.html">Home</a>
+            <a class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="listing.html">Projects</a>
+            <a class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="ongoing-project.html">Ongoing</a>
+            <a class="text-primary text-sm font-bold leading-normal" href="gallery.html">Gallery</a>
+            <a class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="completed.html">Completed</a>
+            <a class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="about.html">About Us</a>
+            <a class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="contact.html">Contact</a>
+        </div>
+        <a href="contact.html" class="hidden lg:flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary hover:bg-blue-600 transition-colors text-white text-sm font-bold leading-normal tracking-[0.015em]">Enquire Now</a>
+    </div>
+</header>
+<!-- Mobile nav backdrop -->
+<div id="navBackdrop" class="fixed inset-0 z-40 hidden bg-black/40 lg:hidden"></div>
+<!-- Mobile nav drawer -->
+<nav id="navDrawer" class="fixed right-0 top-0 z-50 h-full w-[84%] max-w-sm transform translate-x-full bg-white dark:bg-[#0b1520] p-6 transition-transform lg:hidden">
+    <div class="flex items-center justify-between mb-6">
+        <div class="flex items-center gap-3">
+            <div class="size-8 text-primary">
+                <svg class="w-7 h-7" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path></svg>
+            </div>
+            <h3 class="text-lg font-bold text-[#111418] dark:text-white">Apex Developers</h3>
+        </div>
+        <button id="closeNav" class="p-2 text-gray-600 dark:text-gray-300">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+    </div>
+    <ul class="flex flex-col gap-4 mb-6">
+        <li><a class="text-[#111418] dark:text-gray-200 text-base font-medium hover:text-primary" href="home.html">Home</a></li>
+        <li><a class="text-[#111418] dark:text-gray-200 text-base font-medium hover:text-primary" href="listing.html">Projects</a></li>
+        <li><a class="text-[#111418] dark:text-gray-200 text-base font-medium hover:text-primary" href="ongoing-project.html">Ongoing</a></li>
+        <li><a class="text-primary text-base font-medium" href="gallery.html">Gallery</a></li>
+        <li><a class="text-[#111418] dark:text-gray-200 text-base font-medium hover:text-primary" href="completed.html">Completed</a></li>
+        <li><a class="text-[#111418] dark:text-gray-200 text-base font-medium hover:text-primary" href="about.html">About Us</a></li>
+        <li><a class="text-[#111418] dark:text-gray-200 text-base font-medium hover:text-primary" href="contact.html">Contact</a></li>
+    </ul>
+    <!-- Mobile enquiry removed to avoid duplicate CTA in mobile header -->
+</nav>
+
+<!-- Main Content Wrapper -->
+<div class="flex flex-col min-h-screen">
+<!-- Hero Section -->
+<header class="relative flex flex-col items-center justify-center min-h-[320px] bg-cover bg-center text-center p-8" data-alt="Modern high-rise apartment building at sunset" style='background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBcsrl8y9v1lp3U3u3bp4DGA1nezfSgP3eFOM-_wboE_MlsF4lc0DYcfXCqX5AgHHlyrcq9muvMkNqhEwjF9N2fmKnZmgR0OUGSOgf90SzyIi9Zbck3KBw6n9TQLRkM3zrRDDoNrlRP7hImSxUmMvI4XVsV05l-lctQS0C_OmU9YsLvlnuuTvN1Rg0Dc6bN46op1tolJJKinOj2tGuekN8qCIUjdAY1Bbrrrofo-XoPbASyNKVMhmXD1VF1V7ZL8PPPFRNC8Bt5VdA");'>
+<div class="max-w-3xl flex flex-col gap-4 animate-fade-in-up">
+<h1 class="text-white text-4xl md:text-5xl font-black leading-tight tracking-tight">
+                    Our Portfolio
+                </h1>
+<p class="text-gray-200 text-lg md:text-xl max-w-2xl mx-auto font-light">
+                    Explore a curated selection of our completed masterpieces and ongoing architectural marvels.
+                </p>
+</div>
+</header>
+<!-- Filters -->
+<div class="w-full bg-white dark:bg-background-dark border-b border-gray-100 dark:border-gray-800 sticky top-[65px] z-40 shadow-sm">
+<div class="max-w-[1200px] mx-auto px-4 md:px-10 py-4 overflow-x-auto no-scrollbar">
+<div class="flex gap-3 min-w-max">
+<button class="flex h-9 items-center justify-center px-5 rounded-full bg-primary text-white transition-all shadow-md">
+<span class="text-sm font-medium">All Projects</span>
+</button>
+<button class="flex h-9 items-center justify-center px-5 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 transition-all">
+<span class="text-sm font-medium">Exterior</span>
+</button>
+<button class="flex h-9 items-center justify-center px-5 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 transition-all">
+<span class="text-sm font-medium">Interior</span>
+</button>
+<button class="flex h-9 items-center justify-center px-5 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 transition-all">
+<span class="text-sm font-medium">Amenities</span>
+</button>
+<button class="flex h-9 items-center justify-center px-5 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 transition-all flex gap-2">
+<span class="material-symbols-outlined text-[18px]">play_circle</span>
+<span class="text-sm font-medium">Video Tours</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Gallery Grid -->
+<main class="flex-1 py-10 px-4 md:px-10 max-w-[1200px] mx-auto w-full">
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 auto-rows-[280px]">
+<!-- Item 1: Featured Large -->
+<div class="group relative cursor-pointer overflow-hidden rounded-xl bg-gray-200 md:col-span-2 md:row-span-2 shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Modern glass skyscraper facade against blue sky" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD8T3W3-F_3DrxxmtXGr58zH4cg6Ft9FOR29CtI_TF7O6h_r4WApfkcHUZUojTZS3p9RucCGjH5w6-_eJP6eO61IxHPB9OaUpU-7skM5pMXzhKFoBIocmsm7OP9VB-V_iOXVRlC7XBncE2dqc_NwpjBhKeSW09lOFPSL2ju8I8jjYXPoV09KOccfMaZfljuq7QoADZmRjaUs52Sf0NKeCj4dcOTd-3No649wP1qefV8N9NNr1efwKHhtkFFxqEYj3rVM6rBFLsSt0g");'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-6 md:p-8 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+<span class="inline-block px-3 py-1 mb-3 text-xs font-semibold tracking-wider text-white uppercase bg-primary rounded-full">Exterior</span>
+<h3 class="text-2xl md:text-3xl font-bold text-white mb-2">Skyline Tower</h3>
+<p class="text-gray-200 text-sm md:text-base opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75 line-clamp-2">A landmark of modern living in the heart of the financial district, featuring 360-degree panoramic views.</p>
+</div>
+</div>
+<!-- Item 2: Vertical -->
+<div class="group relative cursor-pointer overflow-hidden rounded-xl bg-gray-200 md:row-span-2 shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Luxury marble bathroom interior with gold fixtures" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDY6ZhwDRP6HRDsXGcXzX1KUCgFcWLY8WM6Mgn8q7b11u2tQt-at0kkdc0wMJqlNgZaZEldt0go_1Rb5H9NsWE7VBHHoqPtd5sJL17BTqCk2qYut1rlhLZTcxmuLItLRYganEZdQzCDwhOQgh9QvjwU-v3FmsVSd27om9Qs6Olh2y0dA5nDuh7hdd42YOmbsQbnhDAq3gn_ZJjEwz0RT98vj2LO81ZSvt8JGBBHgGqyUrV-G3AHop0KoCj4Fnt1UxmO32aEZOWP_pE");'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<h3 class="text-xl font-bold text-white">Royal Suite Bath</h3>
+<p class="text-gray-300 text-sm mt-1">Interior • Penthouse</p>
+</div>
+</div>
+<!-- Item 3: Standard -->
+<div class="group relative cursor-pointer overflow-hidden rounded-xl bg-gray-200 shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Spacious living room with modern furniture and large windows" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCvbapm6tGam3z6nNwKW8xr7FeAyXueqUNcZKsTXjcam2tabp_2IUnbIpvlXSSc-4PxiLucO88DHArVAYiOxFTZz19W3TgzZe2rv-vNlCyiUf5lo634bNUpdBPglrI8YzyXF5jG-koFpXnThuCFZe6UThDd5cpbxaD0FrbdSA5KLE2XXy2pkcnZSaAhAmwNJAE1lh7vS0OwmZcgLFazwqavwu0o0wdcYVM3VMFIAFz5QFd-KZQdN_OKam0-R7ovwcmWKYp5NwOEUPw");'>
+</div>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors"></div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<div class="bg-white/20 backdrop-blur-sm p-3 rounded-full">
+<span class="material-symbols-outlined text-white text-3xl">visibility</span>
+</div>
+</div>
+<div class="absolute bottom-4 left-4">
+<p class="text-white font-semibold">The Grand Lobby</p>
+</div>
+</div>
+<!-- Item 4: Video Trigger -->
+<div class="group relative cursor-pointer overflow-hidden rounded-xl bg-gray-200 shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Infinity pool overlooking the city skyline" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBZzUb-vlmpagu7hHkijrH8UpzYybNsbuT3zxWwwy-8KYzzWiuqWuyMTyiUnuSadK2RIdg7hr_q6zLXVfr-Xi0A3NTvCKjYYS4UqQy9ijaqR8_EmZJ6DslFokT3TLGhsc9Hv7m7qWrLzB0mIk0dLuu9qtXpr9uSEBqdHruOiKRfuJVlCah9noqN5WdfO8kWwFiJKX5l9BoRVKWEbBJd9IYLED9Cw8TZ0iL-aUHa_0Cc-csVfaiO_nZSgyzozSqrTGZzZD_B7Exxv-U");'>
+</div>
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-white/90 group-hover:bg-primary group-hover:text-white transition-colors size-12 flex items-center justify-center rounded-full shadow-lg">
+<span class="material-symbols-outlined text-inherit text-3xl ml-1">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-4 left-4">
+<p class="text-white font-semibold drop-shadow-md">Infinity Pool Tour</p>
+</div>
+</div>
+<!-- Item 5: Standard -->
+<div class="group relative cursor-pointer overflow-hidden rounded-xl bg-gray-200 shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Private garden with landscaped pathways" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCx560xryta6uEfoUYeNOzb_lb5wzORiMsJoysn0YjA3chi189PnZHzCc8gHSJCNADe_wTg0zvN9DiUQCFZZmabvVnEpFFiXfGGHvuTPnARcOpsZ0q5MCFzMNKjY6XoiSxL3VyfsE7hWhOteLsUZyTkGU-FqUvsYCgFTlD4BOclPxxFd4X3bcIDIhicTKhXT4VIZ1NJaZOr8xMJdegWrbotVW1GWRcBQEzXxB4Hp8Dx2CPXXlqIpVa_O4P06ej7aQY5zHCyWh0avxU");'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="absolute bottom-4 left-4 translate-y-4 group-hover:translate-y-0 transition-transform opacity-0 group-hover:opacity-100">
+<p class="text-white font-semibold">Zen Gardens</p>
+</div>
+</div>
+<!-- Item 6: Standard -->
+<div class="group relative cursor-pointer overflow-hidden rounded-xl bg-gray-200 shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="State of the art fitness center with treadmills" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB3ZJoOfy3Ocxlvc4EY-39HXdzxs04ktTniSrAhlzs5KusVPbFzF2wYnCTFX3zKNisXK15vDN90DKcpwFrFQcwpIoE76chx-LwqHFdYYl0uifnZlAlDHZOPaPOF0hBuPgaDyBru6dEjdDcGHpind8dV2JvWuH_4OtAvQAa62JPUrieOCwkYAeKRpp-vYAT7zcnoOPik6T5mpQ1Yn2U2SbwHuiMXp46EdtTFv4g-OC1SSmtDIkI0xNKZeB5aN-ugEZt6SgcgYa5MuPY");'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="absolute bottom-4 left-4 translate-y-4 group-hover:translate-y-0 transition-transform opacity-0 group-hover:opacity-100">
+<p class="text-white font-semibold">Fitness Center</p>
+</div>
+</div>
+<!-- Item 7: Wide -->
+<div class="group relative cursor-pointer overflow-hidden rounded-xl bg-gray-200 md:col-span-2 shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Modern kitchen with island and bar stools" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAkd76mhkJnxzNY1bApjfjx5y5XV5bSX26efCrMjp3VH2vVazhmYbDu8GaVI97EDWm-aMQfmodP1TmtaozTYWrNgpRRw5-M_SRM4ATmjk93pPHiXQMeU3fWvPMiJrdwf73nk02sDbmEoK50UrCVsGpwZCEF9tpCHwlm5O971Noqtd4khQlKkK6oBsnSpG6iYF0S5dKmTGwikV65uPr-7qJfwK1Tli63evw86wh_nRFSHyKrVFibZg275rjzdkx-j9w91OfmA-pyiWI");'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-70 group-hover:opacity-90 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<h3 class="text-xl font-bold text-white">Chef's Kitchen - Model 4B</h3>
+<p class="text-gray-300 text-sm mt-1">Interior • Open Plan</p>
+</div>
+</div>
+</div>
+<!-- Load More -->
+<div class="flex justify-center mt-12">
+<button class="px-8 py-3 rounded-lg border border-gray-300 dark:border-gray-700 text-[#111418] dark:text-white font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                    Load More Projects
+                </button>
+</div>
+</main>
+<!-- Featured Video Section -->
+<section class="bg-white dark:bg-[#1a2632] py-16">
+<div class="layout-content-container flex flex-col max-w-[960px] mx-auto px-4 md:px-10">
+<div class="flex flex-col gap-2 mb-8 text-center md:text-left">
+<h2 class="text-[#111418] dark:text-white text-2xl md:text-3xl font-bold">Experience the Walkthrough</h2>
+<p class="text-gray-500 dark:text-gray-400">Take a virtual tour of our newest flagship property, The Horizon.</p>
+</div>
+<div class="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl group cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" data-alt="Cinematic shot of a luxury apartment living room" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCADSA5akUSKBHS-rhRrelC8ROyLd5xuSGTc0sa7JAB7nwgxNtzgvaOjgpK8ZTNHFdwfaAZDGGgSCBXf8ZAgCnohZJTS0kIRJEjoAxEJAYbYWvAoRd8IW8PYS9j7zFB466eDAg3Y190_EcCk3PaGFHiDdm8vOry8LrhnyBGAvPcMOJE2GfHm1kLCKHQJHlec6wZU-XnxOyeGUWFlxBzN1UUWDr5mP74sT_2iXOB8pPEvvIz_oWvg8L2hldsCbDAKYsKn1Y5hx3-wN0");'>
+</div>
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors"></div>
+<!-- Play Button -->
+<div class="absolute inset-0 flex items-center justify-center">
+<button class="flex shrink-0 items-center justify-center rounded-full size-20 bg-white/20 backdrop-blur-md text-white border border-white/30 hover:bg-primary hover:border-primary hover:scale-110 transition-all duration-300">
+<span class="material-symbols-outlined text-4xl ml-1">play_arrow</span>
+</button>
+</div>
+<!-- Video Controls Overlay (Simulation) -->
+<div class="absolute inset-x-0 bottom-0 px-6 py-4 bg-gradient-to-t from-black/80 to-transparent">
+<div class="flex h-1 items-center justify-center bg-gray-600 rounded-full overflow-hidden mb-3">
+<div class="w-1/3 h-full bg-primary rounded-full relative"></div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-white cursor-pointer">pause</span>
+<span class="material-symbols-outlined text-white cursor-pointer">volume_up</span>
+<p class="text-white text-xs font-medium tracking-wide">0:37 / 2:23</p>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-white cursor-pointer">settings</span>
+<span class="material-symbols-outlined text-white cursor-pointer">fullscreen</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Lead Gen CTA -->
+<section class="bg-primary/5 dark:bg-primary/10 py-16 px-4">
+<div class="max-w-[960px] mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+<div class="flex flex-col gap-3">
+<h2 class="text-2xl md:text-3xl font-bold text-[#111418] dark:text-white">Ready to see it in person?</h2>
+<p class="text-gray-600 dark:text-gray-300">Schedule a private tour with one of our estate agents today.</p>
+</div>
+<button class="whitespace-nowrap flex items-center justify-center rounded-lg h-12 px-8 bg-primary hover:bg-blue-600 text-white text-base font-bold shadow-lg hover:shadow-primary/30 transition-all transform hover:-translate-y-0.5">
+                    Book a Site Visit
+                </button>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-white dark:bg-background-dark border-t border-gray-200 dark:border-gray-800 pt-16 pb-8">
+<div class="max-w-[1200px] mx-auto px-4 md:px-10">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+<!-- Brand -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2 text-[#111418] dark:text-white mb-2">
+<div class="size-6 rounded bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm">apartment</span>
+</div>
+<span class="text-lg font-bold">Developer Co.</span>
+</div>
+<p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                            Crafting exceptional living spaces for the modern lifestyle. Quality, integrity, and elegance in every brick.
+                        </p>
+</div>
+<!-- Quick Links -->
+<div class="flex flex-col gap-4">
+<h4 class="text-[#111418] dark:text-white font-bold">Quick Links</h4>
+<div class="flex flex-col gap-2">
+<a class="text-gray-500 dark:text-gray-400 text-sm hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-gray-500 dark:text-gray-400 text-sm hover:text-primary transition-colors" href="#">Our Portfolio</a>
+<a class="text-gray-500 dark:text-gray-400 text-sm hover:text-primary transition-colors" href="#">About Us</a>
+<a class="text-gray-500 dark:text-gray-400 text-sm hover:text-primary transition-colors" href="#">Investors</a>
+</div>
+</div>
+<!-- Projects -->
+<div class="flex flex-col gap-4">
+<h4 class="text-[#111418] dark:text-white font-bold">Latest Projects</h4>
+<div class="flex flex-col gap-2">
+<a class="text-gray-500 dark:text-gray-400 text-sm hover:text-primary transition-colors" href="#">Skyline Tower</a>
+<a class="text-gray-500 dark:text-gray-400 text-sm hover:text-primary transition-colors" href="#">Green Meadows</a>
+<a class="text-gray-500 dark:text-gray-400 text-sm hover:text-primary transition-colors" href="#">The Grand Lobby</a>
+</div>
+</div>
+<!-- Contact -->
+<div class="flex flex-col gap-4">
+<h4 class="text-[#111418] dark:text-white font-bold">Contact Us</h4>
+<div class="flex flex-col gap-3">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-gray-400 text-[20px] mt-0.5">location_on</span>
+<span class="text-gray-500 dark:text-gray-400 text-sm">123 Business Avenue,<br/>Tech City, TC 90210</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-gray-400 text-[20px]">call</span>
+<span class="text-gray-500 dark:text-gray-400 text-sm">+1 (555) 123-4567</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-gray-400 text-[20px]">mail</span>
+<span class="text-gray-500 dark:text-gray-400 text-sm">hello@luxuryestates.com</span>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-100 dark:border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+<p class="text-gray-400 text-xs">© 2023 Luxury Estates. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-gray-400 hover:text-primary" href="#"><span class="material-symbols-outlined text-[20px]">language</span></a>
+<!-- Social icons placeholder using symbols -->
+</div>
+</div>
+</div>
+</footer>
+</div>
+<!-- Sticky Floating Action Buttons -->
+<div class="fixed bottom-6 right-6 z-50 flex flex-col gap-4">
+<!-- WhatsApp -->
+<button class="group flex items-center justify-center size-14 rounded-full bg-[#25D366] text-white shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative">
+<span class="material-symbols-outlined text-3xl">chat</span>
+<span class="absolute right-16 px-3 py-1 bg-white dark:bg-gray-800 text-gray-800 dark:text-white text-xs font-bold rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Chat on WhatsApp</span>
+</button>
+<!-- Call -->
+<button class="group flex items-center justify-center size-14 rounded-full bg-primary text-white shadow-lg hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-1 transition-all duration-300 relative">
+<span class="material-symbols-outlined text-3xl">call</span>
+<span class="absolute right-16 px-3 py-1 bg-white dark:bg-gray-800 text-gray-800 dark:text-white text-xs font-bold rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Call Now</span>
+</button>
+</div>
+</body>
+<script>
+    (function(){
+        var open = document.getElementById('openNav');
+        var close = document.getElementById('closeNav');
+        var drawer = document.getElementById('navDrawer');
+        var backdrop = document.getElementById('navBackdrop');
+        function show(){ if(drawer) { drawer.classList.remove('translate-x-full'); drawer.classList.add('translate-x-0'); } if(backdrop) backdrop.classList.remove('hidden'); }
+        function hide(){ if(drawer) { drawer.classList.add('translate-x-full'); drawer.classList.remove('translate-x-0'); } if(backdrop) backdrop.classList.add('hidden'); }
+        if(open) open.addEventListener('click', show);
+        if(close) close.addEventListener('click', hide);
+        if(backdrop) backdrop.addEventListener('click', hide);
+        var links = document.querySelectorAll('#navDrawer a');
+        links.forEach(function(a){ a.addEventListener('click', hide); });
+    })();
+</script>
+</html>
